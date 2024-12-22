@@ -1,27 +1,33 @@
----
 aid: circle
-name: Circle
-description: Move money faster, safer with USDC, the digital dollar made for
-  businesses and developers around the world.
-type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: 2024-11-07
-modified: 2024-11-07
 url: https://raw.githubusercontent.com/api-search/circle/refs/heads/main/apis.yml
-specificationVersion: "0.19"
 apis:
   - aid: circle:circle
     name: Circle
-    description: Move money faster, safer with USDC, the digital dollar made for
-      businesses and developers around the world.
-    humanURL: https://developers.circle.com/
     tags:
       - API
+    humanURL: https://developers.circle.com/
     properties:
-      - type: Documentation
-        url: https://developers.circle.com/
+      - url: https://developers.circle.com/
+        type: Documentation
+    description: >-
+      Move money faster, safer with USDC, the digital dollar made for businesses
+      and developers around the world.
+name: Circle
+tags:
+  - Money
+  - Currency
+  - Transfers
+  - Blockchain
+type: Contract
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+created: '2024-11-07T00:00:00.000Z'
+modified: '2024-12-22'
+description: >-
+  Move money faster, safer with USDC, the digital dollar made for businesses and
+  developers around the world.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
+position: Consuming
+access: 3rd-Party
