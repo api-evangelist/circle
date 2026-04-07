@@ -3,10 +3,10 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/circle/refs/heads/main/apis.yml
 name: Circle
 tags:
-  - Money
-  - Currency
-  - Transfers
   - Blockchain
+  - Currency
+  - Money
+  - Transfers
   - USDC
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
