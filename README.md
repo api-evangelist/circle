@@ -186,8 +186,8 @@ Issue and redeem regulated stablecoins backed by USDC reserves; manage minting, 
 - [JSON-LD Context](json-ld/circle-context.jsonld)
 - [Wallet JSON Schema](json-schema/circle-wallet-schema.json)
 - [Transaction JSON Schema](json-schema/circle-transaction-schema.json)
-- [Spectral Ruleset](spectral/circle-spectral.yml)
-- [Naftiko Capabilities](naftiko/circle-capabilities.yml)
+- [Spectral Ruleset](rules/circle-rules.yml)
+- [Naftiko Capabilities](capabilities/circle-capabilities.yml)
 
 ## Maintainers
 

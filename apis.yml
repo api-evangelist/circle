@@ -219,9 +219,9 @@ common:
   - type: JSONSchema
     url: json-schema/circle-transaction-schema.json
   - type: Spectral
-    url: spectral/circle-spectral.yml
+    url: rules/circle-rules.yml
   - type: Naftiko Capabilities
-    url: naftiko/circle-capabilities.yml
+    url: capabilities/circle-capabilities.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
