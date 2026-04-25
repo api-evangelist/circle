@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/circle/main/json-schema/circle-wallet-schema.json",
+  "title": "Circle Wallet",
+  "description": "A Circle programmable wallet (developer- or user-controlled) created via the Web3 Services platform.",
+  "type": "object",
+  "required": ["id", "address", "blockchain", "accountType", "custodyType", "state"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Circle-assigned unique identifier for the wallet."
+    },
+    "address": {
+      "type": "string",
+      "description": "Public on-chain address for the wallet."
+    },
+    "blockchain": {
+      "type": "string",
+      "enum": ["ETH", "ETH-SEPOLIA", "MATIC", "MATIC-AMOY", "AVAX", "AVAX-FUJI", "ARB", "ARB-SEPOLIA", "BASE", "BASE-SEPOLIA", "SOL", "SOL-DEVNET", "NEAR", "NEAR-TESTNET"],
+      "description": "Blockchain network the wallet is provisioned on."
+    },
+    "accountType": {
+      "type": "string",
+      "enum": ["EOA", "SCA"],
+      "description": "Externally Owned Account (EOA) or Smart Contract Account (SCA)."
+    },
+    "custodyType": {
+      "type": "string",
+      "enum": ["DEVELOPER", "ENDUSER"],
+      "description": "Whether the developer or end user controls the keys."
+    },
+    "state": {
+      "type": "string",
+      "enum": ["LIVE", "FROZEN"]
+    },
+    "walletSetId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "refId": {
+      "type": "string",
+      "description": "Optional client-supplied reference identifier."
+    },
+    "createDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updateDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": true
+}

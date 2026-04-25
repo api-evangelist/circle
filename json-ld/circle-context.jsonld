@@ -1,0 +1,114 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "circle": "https://developers.circle.com/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Wallet": {
+      "@id": "circle:Wallet",
+      "@context": {
+        "id": "circle:id",
+        "address": "circle:address",
+        "blockchain": "circle:blockchain",
+        "accountType": "circle:account_type",
+        "custodyType": "circle:custody_type",
+        "state": "circle:state",
+        "walletSetId": "circle:wallet_set_id",
+        "createdAt": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "updatedAt": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Transaction": {
+      "@id": "circle:Transaction",
+      "@context": {
+        "id": "circle:id",
+        "blockchain": "circle:blockchain",
+        "tokenId": "circle:token_id",
+        "walletId": "circle:wallet_id",
+        "sourceAddress": "circle:source_address",
+        "destinationAddress": "circle:destination_address",
+        "transactionType": "circle:transaction_type",
+        "state": "circle:state",
+        "amounts": "circle:amounts",
+        "txHash": "circle:tx_hash",
+        "blockHash": "circle:block_hash",
+        "blockHeight": "circle:block_height",
+        "networkFee": "circle:network_fee",
+        "estimatedFee": "circle:estimated_fee",
+        "createDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "updateDate": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Token": {
+      "@id": "circle:Token",
+      "@context": {
+        "id": "circle:id",
+        "blockchain": "circle:blockchain",
+        "name": "schema:name",
+        "symbol": "schema:tickerSymbol",
+        "decimals": "circle:decimals",
+        "isNative": "circle:is_native",
+        "tokenAddress": "circle:token_address"
+      }
+    },
+
+    "Contract": {
+      "@id": "circle:Contract",
+      "@context": {
+        "id": "circle:id",
+        "blockchain": "circle:blockchain",
+        "contractAddress": "circle:contract_address",
+        "contractInputType": "circle:contract_input_type",
+        "name": "schema:name",
+        "abiJson": "circle:abi_json",
+        "deploymentTransactionHash": "circle:deployment_transaction_hash"
+      }
+    },
+
+    "Attestation": {
+      "@id": "circle:Attestation",
+      "@context": {
+        "messageHash": "circle:message_hash",
+        "message": "circle:message",
+        "attestation": "circle:attestation",
+        "status": "circle:status"
+      }
+    },
+
+    "Payment": {
+      "@id": "circle:Payment",
+      "@context": {
+        "id": "circle:id",
+        "amount": "circle:amount",
+        "currency": "circle:currency",
+        "source": "circle:source",
+        "destination": "circle:destination",
+        "status": "circle:status",
+        "settlementDate": {
+          "@id": "circle:settlement_date",
+          "@type": "xsd:date"
+        },
+        "createdAt": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}

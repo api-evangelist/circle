@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/circle/main/json-schema/circle-transaction-schema.json",
+  "title": "Circle Transaction",
+  "description": "A Circle on-chain transaction record across wallets, smart contracts, and CCTP transfers.",
+  "type": "object",
+  "required": ["id", "blockchain", "transactionType", "state"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "blockchain": {
+      "type": "string"
+    },
+    "tokenId": {
+      "type": "string"
+    },
+    "walletId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sourceAddress": {
+      "type": "string"
+    },
+    "destinationAddress": {
+      "type": "string"
+    },
+    "transactionType": {
+      "type": "string",
+      "enum": ["INBOUND", "OUTBOUND", "CONTRACT_DEPLOYMENT", "CONTRACT_EXECUTION"]
+    },
+    "state": {
+      "type": "string",
+      "enum": ["INITIATED", "QUEUED", "SENT", "CONFIRMED", "COMPLETE", "FAILED", "CANCELLED", "DENIED"]
+    },
+    "amounts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "txHash": {
+      "type": "string"
+    },
+    "blockHash": {
+      "type": "string"
+    },
+    "blockHeight": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "networkFee": {
+      "type": "string"
+    },
+    "estimatedFee": {
+      "type": "object",
+      "properties": {
+        "gasLimit": { "type": "string" },
+        "baseFee": { "type": "string" },
+        "priorityFee": { "type": "string" },
+        "maxFee": { "type": "string" }
+      }
+    },
+    "errorReason": {
+      "type": "string"
+    },
+    "createDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updateDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,165 @@
+# Naftiko capabilities profile for the Circle developer platform.
+# Capabilities cover the highest-leverage operations across Programmable
+# Wallets, CCTP, the Smart Contract Platform, the Circle Payments Network,
+# and the Compliance Engine.
+provider: circle
+name: Circle
+description: >-
+  Circle Web3 Services and stablecoin infrastructure: programmable wallets,
+  USDC transfers, cross-chain bridging, smart contract deployment,
+  cross-border payments, and compliance screening.
+capabilities:
+  - id: circle.wallets.create-developer
+    name: Create developer-controlled wallet
+    description: Provision a server-side wallet whose keys Circle holds for the developer.
+    api: circle:developer-controlled-wallets
+    inputs:
+      - blockchains
+      - count
+      - walletSetId
+      - accountType
+      - idempotencyKey
+    outputs:
+      - id
+      - address
+      - blockchain
+
+  - id: circle.wallets.create-user
+    name: Create user-controlled wallet
+    description: Provision a non-custodial wallet that the end user authenticates into.
+    api: circle:user-controlled-wallets
+    inputs:
+      - userId
+      - blockchains
+      - accountType
+      - idempotencyKey
+    outputs:
+      - challengeId
+
+  - id: circle.wallets.list
+    name: List wallets
+    description: Enumerate wallets visible to the API key.
+    api: circle:developer-controlled-wallets
+    inputs:
+      - userId
+      - blockchain
+      - walletSetId
+      - pageSize
+    outputs:
+      - wallets
+      - pageBefore
+      - pageAfter
+
+  - id: circle.wallets.balance
+    name: Get wallet token balances
+    description: Return token balances for a single wallet.
+    api: circle:developer-controlled-wallets
+    inputs:
+      - walletId
+      - tokenAddress
+      - includeAll
+    outputs:
+      - tokenBalances
+
+  - id: circle.transactions.transfer
+    name: Create transfer
+    description: Transfer USDC, EURC, or another supported token between addresses.
+    api: circle:developer-controlled-wallets
+    inputs:
+      - walletId
+      - destinationAddress
+      - amounts
+      - tokenId
+      - feeLevel
+      - idempotencyKey
+    outputs:
+      - id
+      - state
+
+  - id: circle.transactions.get
+    name: Get transaction
+    description: Retrieve a single on-chain transaction record.
+    api: circle:developer-controlled-wallets
+    inputs:
+      - id
+    outputs:
+      - state
+      - txHash
+      - blockHeight
+
+  - id: circle.cctp.attestation
+    name: Get CCTP attestation
+    description: Fetch the attestation needed to mint USDC on the destination chain.
+    api: circle:cctp
+    inputs:
+      - messageHash
+    outputs:
+      - status
+      - attestation
+
+  - id: circle.contracts.deploy
+    name: Deploy smart contract
+    description: Deploy an ERC-20, ERC-721, or arbitrary contract via the Smart Contract Platform.
+    api: circle:smart-contract-platform
+    inputs:
+      - walletId
+      - blockchain
+      - contractInputType
+      - bytecode
+      - constructorParameters
+      - idempotencyKey
+    outputs:
+      - id
+      - state
+
+  - id: circle.contracts.execute
+    name: Execute contract method
+    description: Call a smart contract function from a Circle-managed wallet.
+    api: circle:smart-contract-platform
+    inputs:
+      - walletId
+      - contractAddress
+      - abiFunctionSignature
+      - abiParameters
+      - idempotencyKey
+    outputs:
+      - id
+      - state
+
+  - id: circle.cpn.payment
+    name: Submit cross-border payment
+    description: Originate a USDC-settled cross-border payment via CPN.
+    api: circle:cpn
+    inputs:
+      - originator
+      - beneficiary
+      - amount
+      - currency
+      - purposeOfPayment
+    outputs:
+      - id
+      - status
+
+  - id: circle.compliance.screen-address
+    name: Screen wallet address
+    description: Run an address through Circle's compliance and sanctions screening.
+    api: circle:compliance-engine
+    inputs:
+      - address
+      - blockchain
+      - chainId
+    outputs:
+      - result
+      - decision
+      - reasons
+
+  - id: circle.compliance.screen-transaction
+    name: Screen transaction
+    description: Screen a transaction prior to broadcast for AML/sanctions risk.
+    api: circle:compliance-engine
+    inputs:
+      - transactionId
+    outputs:
+      - result
+      - decision
+      - reasons
