@@ -196,9 +196,9 @@ common:
     url: https://console.circle.com/
   - type: Authentication
     url: https://developers.circle.com/w3s/authentication
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.circle.com/w3s/getting-started
-  - type: Status
+  - type: StatusPage
     url: https://status.circle.com/
   - type: Support
     url: https://support.usdc.circle.com/
@@ -206,13 +206,13 @@ common:
     url: https://www.circle.com/blog
   - type: Community
     url: https://discord.com/invite/buildoncircle
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/circlefin
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.circle.com/legal/privacy-policy
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.circle.com/legal/terms-of-service
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/circle-context.jsonld
   - type: JSONSchema
     url: json-schema/circle-wallet-schema.json
