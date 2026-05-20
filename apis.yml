@@ -188,6 +188,8 @@ apis:
       Issue and redeem regulated stablecoins backed by USDC reserves;
       manage minting, burning, and reserve attestations.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/circleco
   - type: Website
     url: https://www.circle.com/
   - type: Portal
