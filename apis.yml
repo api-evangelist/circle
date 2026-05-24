@@ -224,6 +224,8 @@ common:
     url: rules/circle-rules.yml
   - type: Naftiko Capabilities
     url: capabilities/circle-capabilities.yml
+  - type: LLMsTxt
+    url: https://developers.circle.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
