@@ -17,7 +17,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-07'
-modified: '2026-04-23'
+modified: '2026-05-30'
 position: Consumer
 specificationVersion: '0.19'
 description: >-
@@ -220,6 +220,8 @@ common:
     url: json-schema/circle-wallet-schema.json
   - type: JSONSchema
     url: json-schema/circle-transaction-schema.json
+  - type: AsyncAPI
+    url: asyncapi/circle-webhooks-asyncapi.yml
   - type: Spectral
     url: rules/circle-rules.yml
   - type: Naftiko Capabilities
