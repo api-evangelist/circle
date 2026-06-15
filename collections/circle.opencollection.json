@@ -1,0 +1,487 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled Wallets API",
+    "version": "2026-05-23"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Wallet Sets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List wallet sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/walletSets"
+          },
+          "docs": "List wallet sets"
+        },
+        {
+          "info": {
+            "name": "Get wallet set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/walletSets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet set"
+        },
+        {
+          "info": {
+            "name": "Create a developer-controlled wallet set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/walletSets"
+          },
+          "docs": "Create a developer-controlled wallet set"
+        },
+        {
+          "info": {
+            "name": "Update a developer-controlled wallet set",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/developer/walletSets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Update a developer-controlled wallet set"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Wallets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create developer-controlled wallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets"
+          },
+          "docs": "Create developer-controlled wallets"
+        },
+        {
+          "info": {
+            "name": "List wallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets"
+          },
+          "docs": "List wallets"
+        },
+        {
+          "info": {
+            "name": "Get wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet"
+        },
+        {
+          "info": {
+            "name": "Update wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Update wallet"
+        },
+        {
+          "info": {
+            "name": "List developer wallet balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets/balances"
+          },
+          "docs": "List developer wallet balances"
+        },
+        {
+          "info": {
+            "name": "Derive wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets/derive"
+          },
+          "docs": "Derive wallet"
+        },
+        {
+          "info": {
+            "name": "Get wallet token balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id/balances",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet token balances"
+        },
+        {
+          "info": {
+            "name": "Enable a blockchain for the wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets/:id/blockchains/:blockchain",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              },
+              {
+                "name": "blockchain",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Enable a blockchain for the wallet"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NFTs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get wallet NFTs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id/nfts",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet NFTs"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Signing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sign a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/sign/message"
+          },
+          "docs": "Sign a message"
+        },
+        {
+          "info": {
+            "name": "Sign EIP-712 typed data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/sign/typedData"
+          },
+          "docs": "Sign EIP-712 typed data"
+        },
+        {
+          "info": {
+            "name": "Sign a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/sign/transaction"
+          },
+          "docs": "Sign a transaction"
+        },
+        {
+          "info": {
+            "name": "Sign a delegate action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/sign/delegateAction"
+          },
+          "docs": "Sign a delegate action"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/transactions"
+          },
+          "docs": "List transactions"
+        },
+        {
+          "info": {
+            "name": "Get transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get transaction"
+        },
+        {
+          "info": {
+            "name": "Get lowest nonce transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/transactions/lowestNonceTransaction"
+          },
+          "docs": "Get lowest nonce transaction"
+        },
+        {
+          "info": {
+            "name": "Get fee parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/developer/transactions/feeParameters"
+          },
+          "docs": "Get fee parameters"
+        },
+        {
+          "info": {
+            "name": "Create a transfer transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/transactions/transfer"
+          },
+          "docs": "Create a transfer transaction"
+        },
+        {
+          "info": {
+            "name": "Estimate transfer fee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/transactions/transfer/estimateFee"
+          },
+          "docs": "Estimate transfer fee"
+        },
+        {
+          "info": {
+            "name": "Estimate contract-execution fee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/transactions/contractExecution/estimateFee"
+          },
+          "docs": "Estimate contract-execution fee"
+        },
+        {
+          "info": {
+            "name": "Validate a blockchain address",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/transactions/validateAddress"
+          },
+          "docs": "Validate a blockchain address"
+        },
+        {
+          "info": {
+            "name": "Create contract-execution transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/transactions/contractExecution"
+          },
+          "docs": "Create contract-execution transaction"
+        },
+        {
+          "info": {
+            "name": "Create wallet-upgrade transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/transactions/walletUpgrade"
+          },
+          "docs": "Create wallet-upgrade transaction"
+        },
+        {
+          "info": {
+            "name": "Cancel a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/transactions/:id/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Cancel a transaction"
+        },
+        {
+          "info": {
+            "name": "Accelerate a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/transactions/:id/accelerate",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Accelerate a transaction"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get token details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get token details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
