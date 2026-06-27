@@ -212,7 +212,7 @@ common:
     url: asyncapi/circle-webhooks-asyncapi.yml
   - type: Spectral
     url: rules/circle-rules.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developers.circle.com/llms.txt
 maintainers:
   - FN: Kin Lane
