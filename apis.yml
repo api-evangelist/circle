@@ -176,6 +176,10 @@ apis:
         type: OpenAPI
     description: Issue and redeem regulated stablecoins backed by USDC reserves; manage minting, burning, and reserve attestations.
 common:
+  - type: DomainSecurity
+    url: security/circle-domain-security.yml
+  - type: Authentication
+    url: authentication/circle-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/circleco
   - type: Website

@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/circle-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.
+  sources:
+  - openapi/circle-openapi.yml
