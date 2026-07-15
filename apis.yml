@@ -176,6 +176,8 @@ apis:
         type: OpenAPI
     description: Issue and redeem regulated stablecoins backed by USDC reserves; manage minting, burning, and reserve attestations.
 common:
+  - type: AgenticAccess
+    url: agentic-access/circle-agentic-access.yml
   - type: DomainSecurity
     url: security/circle-domain-security.yml
   - type: Authentication
