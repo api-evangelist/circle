@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Transactions API
+  description: 'Circle''s Web3 Services API for developer-controlled programmable wallets, wallet sets,
+
+    signing, transactions, tokens, and NFTs. This is a best-effort partial spec derived
+
+    from Circle''s published OpenAPI at
+
+    https://developers.circle.com/openapi/developer-controlled-wallets.yaml.'
+  version: '2026-05-23'
+  contact:
+    name: Circle Developer Support
+    url: https://developers.circle.com/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.circle.com
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Transactions
+paths:
+  /v1/w3s/transactions:
+    get:
+      tags:
+      - Transactions
+      summary: List transactions
+      operationId: listTransactions
+      responses:
+        '200':
+          description: A list of transactions
+  /v1/w3s/transactions/{id}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags:
+      - Transactions
+      summary: Get transaction
+      operationId: getTransaction
+      responses:
+        '200':
+          description: Transaction details
+  /v1/w3s/transactions/lowestNonceTransaction:
+    get:
+      tags:
+      - Transactions
+      summary: Get lowest nonce transaction
+      operationId: getLowestNonceTransaction
+      responses:
+        '200':
+          description: Transaction details
+  /v1/w3s/developer/transactions/feeParameters:
+    get:
+      tags:
+      - Transactions
+      summary: Get fee parameters
+      operationId: getFeeParameters
+      responses:
+        '200':
+          description: Fee parameters
+  /v1/w3s/developer/transactions/transfer:
+    post:
+      tags:
+      - Transactions
+      summary: Create a transfer transaction
+      operationId: createTransferTransaction
+      responses:
+        '201':
+          description: Transfer submitted
+  /v1/w3s/transactions/transfer/estimateFee:
+    post:
+      tags:
+      - Transactions
+      summary: Estimate transfer fee
+      operationId: estimateTransferFee
+      responses:
+        '200':
+          description: Fee estimate
+  /v1/w3s/transactions/contractExecution/estimateFee:
+    post:
+      tags:
+      - Transactions
+      summary: Estimate contract-execution fee
+      operationId: estimateContractExecutionFee
+      responses:
+        '200':
+          description: Fee estimate
+  /v1/w3s/transactions/validateAddress:
+    post:
+      tags:
+      - Transactions
+      summary: Validate a blockchain address
+      operationId: validateAddress
+      responses:
+        '200':
+          description: Validation result
+  /v1/w3s/developer/transactions/contractExecution:
+    post:
+      tags:
+      - Transactions
+      summary: Create contract-execution transaction
+      operationId: createContractExecution
+      responses:
+        '201':
+          description: Contract execution submitted
+  /v1/w3s/developer/transactions/walletUpgrade:
+    post:
+      tags:
+      - Transactions
+      summary: Create wallet-upgrade transaction
+      operationId: createWalletUpgrade
+      responses:
+        '201':
+          description: Wallet upgrade submitted
+  /v1/w3s/developer/transactions/{id}/cancel:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    post:
+      tags:
+      - Transactions
+      summary: Cancel a transaction
+      operationId: cancelTransaction
+      responses:
+        '200':
+          description: Cancel submitted
+  /v1/w3s/developer/transactions/{id}/accelerate:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    post:
+      tags:
+      - Transactions
+      summary: Accelerate a transaction
+      operationId: accelerateTransaction
+      responses:
+        '200':
+          description: Accelerate submitted
+components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Resource identifier (UUID).
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.

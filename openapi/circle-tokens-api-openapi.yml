@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Tokens API
+  description: 'Circle''s Web3 Services API for developer-controlled programmable wallets, wallet sets,
+
+    signing, transactions, tokens, and NFTs. This is a best-effort partial spec derived
+
+    from Circle''s published OpenAPI at
+
+    https://developers.circle.com/openapi/developer-controlled-wallets.yaml.'
+  version: '2026-05-23'
+  contact:
+    name: Circle Developer Support
+    url: https://developers.circle.com/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.circle.com
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Tokens
+paths:
+  /v1/w3s/tokens/{id}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags:
+      - Tokens
+      summary: Get token details
+      operationId: getToken
+      responses:
+        '200':
+          description: Token details
+components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Resource identifier (UUID).
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.

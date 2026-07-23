@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Wallet Sets API
+  description: 'Circle''s Web3 Services API for developer-controlled programmable wallets, wallet sets,
+
+    signing, transactions, tokens, and NFTs. This is a best-effort partial spec derived
+
+    from Circle''s published OpenAPI at
+
+    https://developers.circle.com/openapi/developer-controlled-wallets.yaml.'
+  version: '2026-05-23'
+  contact:
+    name: Circle Developer Support
+    url: https://developers.circle.com/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.circle.com
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Wallet Sets
+paths:
+  /v1/w3s/walletSets:
+    get:
+      tags:
+      - Wallet Sets
+      summary: List wallet sets
+      operationId: listWalletSets
+      responses:
+        '200':
+          description: A list of wallet sets
+  /v1/w3s/walletSets/{id}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags:
+      - Wallet Sets
+      summary: Get wallet set
+      operationId: getWalletSet
+      responses:
+        '200':
+          description: Wallet set details
+  /v1/w3s/developer/walletSets:
+    post:
+      tags:
+      - Wallet Sets
+      summary: Create a developer-controlled wallet set
+      operationId: createWalletSet
+      responses:
+        '201':
+          description: Wallet set created
+  /v1/w3s/developer/walletSets/{id}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    put:
+      tags:
+      - Wallet Sets
+      summary: Update a developer-controlled wallet set
+      operationId: updateWalletSet
+      responses:
+        '200':
+          description: Wallet set updated
+components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Resource identifier (UUID).
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.

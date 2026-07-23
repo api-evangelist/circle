@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Signing API
+  description: 'Circle''s Web3 Services API for developer-controlled programmable wallets, wallet sets,
+
+    signing, transactions, tokens, and NFTs. This is a best-effort partial spec derived
+
+    from Circle''s published OpenAPI at
+
+    https://developers.circle.com/openapi/developer-controlled-wallets.yaml.'
+  version: '2026-05-23'
+  contact:
+    name: Circle Developer Support
+    url: https://developers.circle.com/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.circle.com
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Signing
+paths:
+  /v1/w3s/developer/sign/message:
+    post:
+      tags:
+      - Signing
+      summary: Sign a message
+      operationId: signMessage
+      responses:
+        '200':
+          description: Signature
+  /v1/w3s/developer/sign/typedData:
+    post:
+      tags:
+      - Signing
+      summary: Sign EIP-712 typed data
+      operationId: signTypedData
+      responses:
+        '200':
+          description: Signature
+  /v1/w3s/developer/sign/transaction:
+    post:
+      tags:
+      - Signing
+      summary: Sign a transaction
+      operationId: signTransaction
+      responses:
+        '200':
+          description: Signature
+  /v1/w3s/developer/sign/delegateAction:
+    post:
+      tags:
+      - Signing
+      summary: Sign a delegate action
+      operationId: signDelegateAction
+      responses:
+        '200':
+          description: Signature
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.

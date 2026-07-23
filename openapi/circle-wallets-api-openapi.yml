@@ -1,0 +1,121 @@
+openapi: 3.1.0
+info:
+  title: Circle Web3 Services (W3S) — Developer-Controlled NFTs Wallets API
+  description: 'Circle''s Web3 Services API for developer-controlled programmable wallets, wallet sets,
+
+    signing, transactions, tokens, and NFTs. This is a best-effort partial spec derived
+
+    from Circle''s published OpenAPI at
+
+    https://developers.circle.com/openapi/developer-controlled-wallets.yaml.'
+  version: '2026-05-23'
+  contact:
+    name: Circle Developer Support
+    url: https://developers.circle.com/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.circle.com
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Wallets
+paths:
+  /v1/w3s/developer/wallets:
+    post:
+      tags:
+      - Wallets
+      summary: Create developer-controlled wallets
+      operationId: createWallets
+      responses:
+        '201':
+          description: Wallets created
+  /v1/w3s/wallets:
+    get:
+      tags:
+      - Wallets
+      summary: List wallets
+      operationId: listWallets
+      responses:
+        '200':
+          description: A list of wallets
+  /v1/w3s/wallets/{id}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags:
+      - Wallets
+      summary: Get wallet
+      operationId: getWallet
+      responses:
+        '200':
+          description: Wallet details
+    put:
+      tags:
+      - Wallets
+      summary: Update wallet
+      operationId: updateWallet
+      responses:
+        '200':
+          description: Wallet updated
+  /v1/w3s/developer/wallets/balances:
+    get:
+      tags:
+      - Wallets
+      summary: List developer wallet balances
+      operationId: listDeveloperWalletBalances
+      responses:
+        '200':
+          description: Balances list
+  /v1/w3s/developer/wallets/derive:
+    put:
+      tags:
+      - Wallets
+      summary: Derive wallet
+      operationId: deriveWallet
+      responses:
+        '200':
+          description: Wallet derived
+  /v1/w3s/wallets/{id}/balances:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags:
+      - Wallets
+      summary: Get wallet token balances
+      operationId: getWalletBalances
+      responses:
+        '200':
+          description: Balances
+  /v1/w3s/developer/wallets/{id}/blockchains/{blockchain}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    - name: blockchain
+      in: path
+      required: true
+      schema:
+        type: string
+    put:
+      tags:
+      - Wallets
+      summary: Enable a blockchain for the wallet
+      operationId: enableWalletBlockchain
+      responses:
+        '200':
+          description: Blockchain enabled
+components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Resource identifier (UUID).
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.
