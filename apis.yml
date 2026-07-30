@@ -13,7 +13,20 @@ tags:
   - USDC
   - Wallets
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/circle.png
 access: 3rd-Party
 created: '2024-11-07'
 modified: '2026-05-30'
@@ -26,155 +39,188 @@ description: >-
   Circle Payments Network (CPN) for cross-border payments, compliance, StableFX trading on Arc, and xReserve for issuing
   USDC-backed stablecoins.
 apis:
-  - aid: circle:developer-controlled-wallets
-    name: Developer-Controlled Wallets
-    tags:
-      - Custody
-      - USDC
-      - Wallets
-    humanURL: https://developers.circle.com/w3s/programmable-wallets
-    baseURL: https://api.circle.com/v1/w3s
-    properties:
-      - url: https://developers.circle.com/w3s/programmable-wallets
-        type: Documentation
-      - url: https://developers.circle.com/openapi/developer-controlled-wallets.yaml
-        type: OpenAPI
-    description: >-
-      Create and manage server-side wallets where the application controls private keys via Circle's secure key
-      management. Supports balances, transfers, signing, and webhook notifications.
-  - aid: circle:user-controlled-wallets
-    name: User-Controlled Wallets
-    tags:
-      - Custody
-      - End-User
-      - USDC
-      - Wallets
-    humanURL: https://developers.circle.com/w3s/user-controlled-wallets
-    baseURL: https://api.circle.com/v1/w3s
-    properties:
-      - url: https://developers.circle.com/w3s/user-controlled-wallets
-        type: Documentation
-      - url: https://developers.circle.com/openapi/user-controlled-wallets.yaml
-        type: OpenAPI
-    description: >-
-      Create wallets that end users control via PIN, biometrics, or social recovery while Circle handles the
-      cryptography. Used to embed non-custodial USDC wallets directly inside consumer apps.
-  - aid: circle:gas-station
-    name: Gas Station and Paymaster
-    tags:
-      - Gas Sponsorship
-      - Paymaster
-      - USDC
-    humanURL: https://developers.circle.com/w3s/gas-station
-    baseURL: https://api.circle.com/v1/w3s
-    properties:
-      - url: https://developers.circle.com/w3s/gas-station
-        type: Documentation
-    description: >-
-      Sponsor gas fees on behalf of users or let users pay gas in USDC via Circle Paymaster, removing native-token
-      friction from onboarding.
-  - aid: circle:cctp
-    name: Cross-Chain Transfer Protocol (CCTP)
-    tags:
-      - Bridging
-      - Cross-Chain
-      - USDC
-    humanURL: https://developers.circle.com/cctp
-    properties:
-      - url: https://developers.circle.com/cctp
-        type: Documentation
-      - url: https://developers.circle.com/openapi/cctp.yaml
-        type: OpenAPI
-    description: >-
-      Burn-and-mint protocol for moving native USDC between supported blockchains without wrapped assets. Provides REST
-      endpoints for attestations and a Bridge Kit SDK for frontend integration.
-  - aid: circle:gateway
-    name: Circle Gateway
-    tags:
-      - Cross-Chain
-      - Liquidity
-      - USDC
-    humanURL: https://developers.circle.com/gateway
-    properties:
-      - url: https://developers.circle.com/gateway
-        type: Documentation
-      - url: https://developers.circle.com/openapi/gateway.yaml
-        type: OpenAPI
-    description: Unified USDC balance across multiple EVM chains and support for nanopayments down to $0.000001 of USDC.
-  - aid: circle:smart-contract-platform
-    name: Smart Contract Platform
-    tags:
-      - Contracts
-      - EVM
-      - Web3
-    humanURL: https://developers.circle.com/w3s/smart-contract-platform
-    baseURL: https://api.circle.com/v1/w3s
-    properties:
-      - url: https://developers.circle.com/w3s/smart-contract-platform
-        type: Documentation
-      - url: https://developers.circle.com/openapi/smart-contract-platform.yaml
-        type: OpenAPI
-    description: >-
-      Deploy, query, and interact with smart contracts across supported blockchains, including ERC-20 and ERC-721
-      templates and arbitrary contract calls.
-  - aid: circle:cpn
-    name: Circle Payments Network (CPN)
-    tags:
-      - Cross-Border
-      - Payments
-      - Settlement
-    humanURL: https://developers.circle.com/cpn
-    properties:
-      - url: https://developers.circle.com/cpn
-        type: Documentation
-      - url: https://developers.circle.com/openapi/cpn-ofi.yaml
-        type: OpenAPI
-    description: >-
-      A network for regulated financial institutions to settle cross-border payments using USDC, with originating and
-      beneficiary financial institution (OFI/BFI) APIs.
-  - aid: circle:compliance-engine
-    name: Compliance Engine
-    tags:
-      - AML
-      - Compliance
-      - Risk
-    humanURL: https://developers.circle.com/w3s/compliance-engine
-    properties:
-      - url: https://developers.circle.com/w3s/compliance-engine
-        type: Documentation
-      - url: https://developers.circle.com/openapi/compliance.yaml
-        type: OpenAPI
-    description: >-
-      Screen wallet addresses and transactions against sanctions lists and risk signals; configure rule sets and review
-      queues for AML programs.
-  - aid: circle:stablefx
-    name: StableFX
-    tags:
-      - Arc
-      - FX
-      - Trading
-    humanURL: https://developers.circle.com/stablefx
-    properties:
-      - url: https://developers.circle.com/stablefx
-        type: Documentation
-      - url: https://developers.circle.com/openapi/stablefx.yaml
-        type: OpenAPI
-    description: >-
-      Stablecoin foreign-exchange trading API on the Arc blockchain for converting between USDC, EURC, and other
-      regulated stablecoins.
-  - aid: circle:xreserve
-    name: xReserve
-    tags:
-      - Issuance
-      - Reserves
-      - Stablecoin
-    humanURL: https://developers.circle.com/xreserve
-    properties:
-      - url: https://developers.circle.com/xreserve
-        type: Documentation
-      - url: https://developers.circle.com/openapi/xreserve.yaml
-        type: OpenAPI
-    description: Issue and redeem regulated stablecoins backed by USDC reserves; manage minting, burning, and reserve attestations.
+- aid: circle:gas-station
+  name: Gas Station and Paymaster
+  tags:
+  - Gas Sponsorship
+  - Paymaster
+  - USDC
+  humanURL: https://developers.circle.com/w3s/gas-station
+  baseURL: https://api.circle.com/v1/w3s
+  properties:
+  - url: https://developers.circle.com/w3s/gas-station
+    type: Documentation
+  description: >-
+    Sponsor gas fees on behalf of users or let users pay gas in USDC via Circle Paymaster, removing native-token
+    friction from onboarding.
+- aid: circle:circle-nfts-api
+  name: Circle NFTs API
+  description: The NFTs API from Circle — 1 operation(s) for nfts.
+  humanURL: https://developers.circle.com/w3s/programmable-wallets
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - NFTs
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-nfts-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
+- aid: circle:circle-signing-api
+  name: Circle Signing API
+  description: The Signing API from Circle — 4 operation(s) for signing.
+  humanURL: https://developers.circle.com/w3s/programmable-wallets
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - Signing
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-signing-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
+- aid: circle:circle-tokens-api
+  name: Circle Tokens API
+  description: The Tokens API from Circle — 1 operation(s) for tokens.
+  humanURL: https://developers.circle.com/w3s/programmable-wallets
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
+- aid: circle:circle-transactions-api
+  name: Circle Transactions API
+  description: The Transactions API from Circle — 12 operation(s) for transactions.
+  humanURL: https://developers.circle.com/w3s/programmable-wallets
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
+- aid: circle:circle-wallet-sets-api
+  name: Circle Wallet Sets API
+  description: The Wallet Sets API from Circle — 4 operation(s) for wallet sets.
+  humanURL: https://developers.circle.com/w3s/programmable-wallets
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - Wallet Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-wallet-sets-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
+- aid: circle:circle-wallets-api
+  name: Circle Wallets API
+  description: The Wallets API from Circle — 7 operation(s) for wallets.
+  humanURL: https://developers.circle.com/w3s/programmable-wallets
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - Wallets
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-wallets-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
 common:
   - type: AgenticAccess
     url: agentic-access/circle-agentic-access.yml
