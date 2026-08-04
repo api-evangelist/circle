@@ -1,0 +1,24 @@
+{
+  "provider": "circle",
+  "sources": [
+    "circle-nfts-api-openapi.yml",
+    "circle-signing-api-openapi.yml",
+    "circle-tokens-api-openapi.yml",
+    "circle-transactions-api-openapi.yml",
+    "circle-wallet-sets-api-openapi.yml",
+    "circle-wallets-api-openapi.yml"
+  ],
+  "outputs": [
+    "circle-nfts-api-openapi.yml",
+    "circle-signing-api-openapi.yml",
+    "circle-tokens-api-openapi.yml",
+    "circle-transactions-api-openapi.yml",
+    "circle-wallet-sets-api-openapi.yml",
+    "circle-wallets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

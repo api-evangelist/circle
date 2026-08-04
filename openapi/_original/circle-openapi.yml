@@ -1,0 +1,306 @@
+openapi: 3.1.0
+info:
+  title: Circle Web3 Services (W3S) — Developer-Controlled Wallets API
+  description: |-
+    Circle's Web3 Services API for developer-controlled programmable wallets, wallet sets,
+    signing, transactions, tokens, and NFTs. This is a best-effort partial spec derived
+    from Circle's published OpenAPI at
+    https://developers.circle.com/openapi/developer-controlled-wallets.yaml.
+  version: "2026-05-23"
+  contact:
+    name: Circle Developer Support
+    url: https://developers.circle.com/
+  license:
+    name: Proprietary
+servers:
+  - url: https://api.circle.com
+    description: Production
+security:
+  - BearerAuth: []
+tags:
+  - name: Wallet Sets
+  - name: Wallets
+  - name: Signing
+  - name: Transactions
+  - name: Tokens
+  - name: NFTs
+paths:
+  /v1/w3s/walletSets:
+    get:
+      tags: [Wallet Sets]
+      summary: List wallet sets
+      operationId: listWalletSets
+      responses:
+        "200":
+          description: A list of wallet sets
+  /v1/w3s/walletSets/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags: [Wallet Sets]
+      summary: Get wallet set
+      operationId: getWalletSet
+      responses:
+        "200":
+          description: Wallet set details
+  /v1/w3s/developer/walletSets:
+    post:
+      tags: [Wallet Sets]
+      summary: Create a developer-controlled wallet set
+      operationId: createWalletSet
+      responses:
+        "201":
+          description: Wallet set created
+  /v1/w3s/developer/walletSets/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    put:
+      tags: [Wallet Sets]
+      summary: Update a developer-controlled wallet set
+      operationId: updateWalletSet
+      responses:
+        "200":
+          description: Wallet set updated
+  /v1/w3s/developer/wallets:
+    post:
+      tags: [Wallets]
+      summary: Create developer-controlled wallets
+      operationId: createWallets
+      responses:
+        "201":
+          description: Wallets created
+  /v1/w3s/wallets:
+    get:
+      tags: [Wallets]
+      summary: List wallets
+      operationId: listWallets
+      responses:
+        "200":
+          description: A list of wallets
+  /v1/w3s/wallets/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags: [Wallets]
+      summary: Get wallet
+      operationId: getWallet
+      responses:
+        "200":
+          description: Wallet details
+    put:
+      tags: [Wallets]
+      summary: Update wallet
+      operationId: updateWallet
+      responses:
+        "200":
+          description: Wallet updated
+  /v1/w3s/developer/wallets/balances:
+    get:
+      tags: [Wallets]
+      summary: List developer wallet balances
+      operationId: listDeveloperWalletBalances
+      responses:
+        "200":
+          description: Balances list
+  /v1/w3s/developer/wallets/derive:
+    put:
+      tags: [Wallets]
+      summary: Derive wallet
+      operationId: deriveWallet
+      responses:
+        "200":
+          description: Wallet derived
+  /v1/w3s/wallets/{id}/balances:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags: [Wallets]
+      summary: Get wallet token balances
+      operationId: getWalletBalances
+      responses:
+        "200":
+          description: Balances
+  /v1/w3s/wallets/{id}/nfts:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags: [NFTs]
+      summary: Get wallet NFTs
+      operationId: getWalletNfts
+      responses:
+        "200":
+          description: NFTs
+  /v1/w3s/developer/wallets/{id}/blockchains/{blockchain}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+      - name: blockchain
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      tags: [Wallets]
+      summary: Enable a blockchain for the wallet
+      operationId: enableWalletBlockchain
+      responses:
+        "200":
+          description: Blockchain enabled
+  /v1/w3s/developer/sign/message:
+    post:
+      tags: [Signing]
+      summary: Sign a message
+      operationId: signMessage
+      responses:
+        "200":
+          description: Signature
+  /v1/w3s/developer/sign/typedData:
+    post:
+      tags: [Signing]
+      summary: Sign EIP-712 typed data
+      operationId: signTypedData
+      responses:
+        "200":
+          description: Signature
+  /v1/w3s/developer/sign/transaction:
+    post:
+      tags: [Signing]
+      summary: Sign a transaction
+      operationId: signTransaction
+      responses:
+        "200":
+          description: Signature
+  /v1/w3s/developer/sign/delegateAction:
+    post:
+      tags: [Signing]
+      summary: Sign a delegate action
+      operationId: signDelegateAction
+      responses:
+        "200":
+          description: Signature
+  /v1/w3s/transactions:
+    get:
+      tags: [Transactions]
+      summary: List transactions
+      operationId: listTransactions
+      responses:
+        "200":
+          description: A list of transactions
+  /v1/w3s/transactions/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags: [Transactions]
+      summary: Get transaction
+      operationId: getTransaction
+      responses:
+        "200":
+          description: Transaction details
+  /v1/w3s/transactions/lowestNonceTransaction:
+    get:
+      tags: [Transactions]
+      summary: Get lowest nonce transaction
+      operationId: getLowestNonceTransaction
+      responses:
+        "200":
+          description: Transaction details
+  /v1/w3s/developer/transactions/feeParameters:
+    get:
+      tags: [Transactions]
+      summary: Get fee parameters
+      operationId: getFeeParameters
+      responses:
+        "200":
+          description: Fee parameters
+  /v1/w3s/developer/transactions/transfer:
+    post:
+      tags: [Transactions]
+      summary: Create a transfer transaction
+      operationId: createTransferTransaction
+      responses:
+        "201":
+          description: Transfer submitted
+  /v1/w3s/transactions/transfer/estimateFee:
+    post:
+      tags: [Transactions]
+      summary: Estimate transfer fee
+      operationId: estimateTransferFee
+      responses:
+        "200":
+          description: Fee estimate
+  /v1/w3s/transactions/contractExecution/estimateFee:
+    post:
+      tags: [Transactions]
+      summary: Estimate contract-execution fee
+      operationId: estimateContractExecutionFee
+      responses:
+        "200":
+          description: Fee estimate
+  /v1/w3s/transactions/validateAddress:
+    post:
+      tags: [Transactions]
+      summary: Validate a blockchain address
+      operationId: validateAddress
+      responses:
+        "200":
+          description: Validation result
+  /v1/w3s/developer/transactions/contractExecution:
+    post:
+      tags: [Transactions]
+      summary: Create contract-execution transaction
+      operationId: createContractExecution
+      responses:
+        "201":
+          description: Contract execution submitted
+  /v1/w3s/developer/transactions/walletUpgrade:
+    post:
+      tags: [Transactions]
+      summary: Create wallet-upgrade transaction
+      operationId: createWalletUpgrade
+      responses:
+        "201":
+          description: Wallet upgrade submitted
+  /v1/w3s/developer/transactions/{id}/cancel:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    post:
+      tags: [Transactions]
+      summary: Cancel a transaction
+      operationId: cancelTransaction
+      responses:
+        "200":
+          description: Cancel submitted
+  /v1/w3s/developer/transactions/{id}/accelerate:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    post:
+      tags: [Transactions]
+      summary: Accelerate a transaction
+      operationId: accelerateTransaction
+      responses:
+        "200":
+          description: Accelerate submitted
+  /v1/w3s/tokens/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    get:
+      tags: [Tokens]
+      summary: Get token details
+      operationId: getToken
+      responses:
+        "200":
+          description: Token details
+components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Resource identifier (UUID).
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Circle API key, formatted as `PREFIX:ID:SECRET`, supplied as Bearer token.
