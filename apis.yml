@@ -222,6 +222,12 @@ apis:
   - type: Documentation
     url: https://developers.circle.com/xreserve
 common:
+  - type: AgentSkill
+    url: https://developers.circle.com/ai/skills
+  - type: APIReference
+    url: https://developers.circle.com/api-reference
+  - type: MCPServer
+    url: https://developers.circle.com/ai/mcp
   - type: AgenticAccess
     url: agentic-access/circle-agentic-access.yml
   - type: DomainSecurity
