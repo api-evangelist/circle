@@ -222,7 +222,7 @@ apis:
   - type: Documentation
     url: https://developers.circle.com/xreserve
 common:
-  - type: AgentSkill
+  - type: AgentSkills
     url: https://developers.circle.com/ai/skills
   - type: APIReference
     url: https://developers.circle.com/api-reference
