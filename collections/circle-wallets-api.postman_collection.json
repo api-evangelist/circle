@@ -1,0 +1,697 @@
+{
+  "item": [
+    {
+      "id": "3ba84a12-ded2-4e28-89a8-33a6daa30737",
+      "name": "Wallets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d1332d1-7525-4da8-8682-f5e5bc3bc4f5",
+          "name": "Create developer-controlled wallets",
+          "request": {
+            "name": "Create developer-controlled wallets",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "wallets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6cbf0f8-57e2-40ec-ab5c-ed772c2f0cc9",
+              "name": "Wallets created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "203e3f3b-6582-46a4-951d-9d593e85e008",
+          "name": "List wallets",
+          "request": {
+            "name": "List wallets",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "wallets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7972555b-510c-4542-bd9b-60b2dfc8bd02",
+              "name": "A list of wallets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bda2711-475b-42c9-b796-efd0845f5e9e",
+          "name": "Get wallet",
+          "request": {
+            "name": "Get wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "wallets",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba6a7c98-05c7-43a5-a26e-9988d068c15d",
+              "name": "Wallet details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "wallets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6308ecf-1ff7-4343-9cd2-c9fc4659201a",
+          "name": "Update wallet",
+          "request": {
+            "name": "Update wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "wallets",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18f5527a-1209-4d28-b7a7-29d0e34cc484",
+              "name": "Wallet updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "wallets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79462028-2085-46bc-8a70-0ddb342c968a",
+          "name": "List developer wallet balances",
+          "request": {
+            "name": "List developer wallet balances",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "wallets",
+                "balances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48e0add8-c93e-4bc3-b8cc-ec1acfc3fd18",
+              "name": "Balances list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "wallets",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b512449-2132-4864-ac1b-6ecb5946069f",
+          "name": "Derive wallet",
+          "request": {
+            "name": "Derive wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "wallets",
+                "derive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd9e82c8-d52c-487b-82dd-c676913086f7",
+              "name": "Wallet derived",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "wallets",
+                    "derive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88edd9a2-bc79-428f-9cf9-daaa067e8590",
+          "name": "Get wallet token balances",
+          "request": {
+            "name": "Get wallet token balances",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "wallets",
+                ":id",
+                "balances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "daf15e6a-f9eb-455f-ada0-57c3f00dbbed",
+              "name": "Balances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "wallets",
+                    ":id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19bb43ee-78d1-4c9c-8632-696d1dfc9632",
+          "name": "Enable a blockchain for the wallet",
+          "request": {
+            "name": "Enable a blockchain for the wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "wallets",
+                ":id",
+                "blockchains",
+                ":blockchain"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blockchain",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ba80f93-6d73-4cea-88a5-7ff029aa3b76",
+              "name": "Blockchain enabled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "wallets",
+                    ":id",
+                    "blockchains",
+                    ":blockchain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blockchain",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.circle.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a291d7c5-a3ad-48b2-99a7-c81b3b09fe57",
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled NFTs Wallets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Circle's Web3 Services API for developer-controlled programmable wallets, wallet sets,\nsigning, transactions, tokens, and NFTs. This is a best-effort partial spec derived\nfrom Circle's published OpenAPI at\nhttps://developers.circle.com/openapi/developer-controlled-wallets.yaml.\n\nContact Support:\n Name: Circle Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

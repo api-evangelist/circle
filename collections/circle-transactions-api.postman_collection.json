@@ -1,0 +1,959 @@
+{
+  "item": [
+    {
+      "id": "1d4e6876-c4ed-4522-a93f-dfc2d18389db",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "366d3b51-e0ab-470c-a5e0-29284390c257",
+          "name": "List transactions",
+          "request": {
+            "name": "List transactions",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c3f5248-c110-436c-b1f3-522c64e4eeec",
+              "name": "A list of transactions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "64fd2b2c-b8d5-42e1-bbb1-bd77c7e6bb45",
+          "name": "Get transaction",
+          "request": {
+            "name": "Get transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "transactions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1fd1bb1b-20d4-41fd-b723-1264de6713cf",
+              "name": "Transaction details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "139ae710-510c-41d6-86d6-c9a26fc69588",
+          "name": "Get lowest nonce transaction",
+          "request": {
+            "name": "Get lowest nonce transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "transactions",
+                "lowestNonceTransaction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "810380ce-2d33-4c00-99fd-95a6748b0648",
+              "name": "Transaction details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "transactions",
+                    "lowestNonceTransaction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83493aa9-38d9-4d35-8f17-a011eab64253",
+          "name": "Get fee parameters",
+          "request": {
+            "name": "Get fee parameters",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "transactions",
+                "feeParameters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96955025-4936-4768-a3c7-198a6b2c2764",
+              "name": "Fee parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "transactions",
+                    "feeParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2901361-8502-438c-b946-917ed442f0a9",
+          "name": "Create a transfer transaction",
+          "request": {
+            "name": "Create a transfer transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "transactions",
+                "transfer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "077150b7-f1cd-49c5-92e0-d8b60ef73261",
+              "name": "Transfer submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "transactions",
+                    "transfer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c5c4cc1-ef0f-4055-9267-0349bf22ab4a",
+          "name": "Estimate transfer fee",
+          "request": {
+            "name": "Estimate transfer fee",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "transactions",
+                "transfer",
+                "estimateFee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a365e20e-d84b-416c-ae9d-b310a329cad0",
+              "name": "Fee estimate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "transactions",
+                    "transfer",
+                    "estimateFee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5cfcd3d-c392-4b01-8116-774ce808abe4",
+          "name": "Estimate contract-execution fee",
+          "request": {
+            "name": "Estimate contract-execution fee",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "transactions",
+                "contractExecution",
+                "estimateFee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "663d7a13-bfd6-4b84-b0cb-c390e68b7089",
+              "name": "Fee estimate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "transactions",
+                    "contractExecution",
+                    "estimateFee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b87768a0-bb6e-41b3-80c3-b7297852411a",
+          "name": "Validate a blockchain address",
+          "request": {
+            "name": "Validate a blockchain address",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "transactions",
+                "validateAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b3242e2-16c5-44f3-a48b-a5347d9200cd",
+              "name": "Validation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "transactions",
+                    "validateAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff70eb8d-396c-44ad-9437-ab43fecfabd3",
+          "name": "Create contract-execution transaction",
+          "request": {
+            "name": "Create contract-execution transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "transactions",
+                "contractExecution"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4cd8dcd5-927f-4094-9eb9-45e8ff9c88fc",
+              "name": "Contract execution submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "transactions",
+                    "contractExecution"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc324583-a0e7-424f-9e42-ac256ccd6c5a",
+          "name": "Create wallet-upgrade transaction",
+          "request": {
+            "name": "Create wallet-upgrade transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "transactions",
+                "walletUpgrade"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b5827fa4-35f8-476c-abb0-addf0f4e2392",
+              "name": "Wallet upgrade submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "transactions",
+                    "walletUpgrade"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a59192d1-6ed4-4851-ae64-569313621dce",
+          "name": "Cancel a transaction",
+          "request": {
+            "name": "Cancel a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "transactions",
+                ":id",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54efd776-4a9e-426f-a80c-6b02483ec72d",
+              "name": "Cancel submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "transactions",
+                    ":id",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ba7aedb-b393-4017-9ec5-e9b676a5af49",
+          "name": "Accelerate a transaction",
+          "request": {
+            "name": "Accelerate a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "transactions",
+                ":id",
+                "accelerate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cab3b98f-06a7-455d-b6f8-b2c403e1343d",
+              "name": "Accelerate submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "transactions",
+                    ":id",
+                    "accelerate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.circle.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c0dc2321-4af0-4b9b-8873-43ffa83dd86b",
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Circle's Web3 Services API for developer-controlled programmable wallets, wallet sets,\nsigning, transactions, tokens, and NFTs. This is a best-effort partial spec derived\nfrom Circle's published OpenAPI at\nhttps://developers.circle.com/openapi/developer-controlled-wallets.yaml.\n\nContact Support:\n Name: Circle Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

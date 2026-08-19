@@ -1,0 +1,333 @@
+{
+  "item": [
+    {
+      "id": "82b3d3c0-e2cc-4807-8a0f-db1388e7b15e",
+      "name": "Signing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89b25eb9-02c0-4eb6-8307-3790bc853ad3",
+          "name": "Sign a message",
+          "request": {
+            "name": "Sign a message",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "sign",
+                "message"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c43871e0-e717-4b55-b337-37aeb4d52f72",
+              "name": "Signature",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "sign",
+                    "message"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eccb19ab-7231-47f3-9a4b-d642e3edb6f0",
+          "name": "Sign EIP-712 typed data",
+          "request": {
+            "name": "Sign EIP-712 typed data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "sign",
+                "typedData"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81d73b29-61cd-4915-af42-a5d2a5e9707f",
+              "name": "Signature",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "sign",
+                    "typedData"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c9db6b3-96a3-448e-a0cc-4c20d0345c2b",
+          "name": "Sign a transaction",
+          "request": {
+            "name": "Sign a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "sign",
+                "transaction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2dafb9fc-5298-443c-a081-a1a7015a04d4",
+              "name": "Signature",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "sign",
+                    "transaction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5014a696-0e8f-47ee-a891-5f09ac806373",
+          "name": "Sign a delegate action",
+          "request": {
+            "name": "Sign a delegate action",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "developer",
+                "sign",
+                "delegateAction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d476edef-a614-4644-839b-9aab00e85b3a",
+              "name": "Signature",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "developer",
+                    "sign",
+                    "delegateAction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.circle.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "64339ff1-cf3d-4567-9b5b-107cc055ad2f",
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Signing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Circle's Web3 Services API for developer-controlled programmable wallets, wallet sets,\nsigning, transactions, tokens, and NFTs. This is a best-effort partial spec derived\nfrom Circle's published OpenAPI at\nhttps://developers.circle.com/openapi/developer-controlled-wallets.yaml.\n\nContact Support:\n Name: Circle Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "item": [
+    {
+      "id": "7d345dd1-6061-432a-89a2-93fd7ed17341",
+      "name": "Tokens",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73ad070e-e5ad-48ea-8fc9-46bf04e98158",
+          "name": "Get token details",
+          "request": {
+            "name": "Get token details",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "w3s",
+                "tokens",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Resource identifier (UUID)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bca6ca75-baca-4308-a97f-c941854bd889",
+              "name": "Token details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "w3s",
+                    "tokens",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Resource identifier (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.circle.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "11aa1791-dc1c-48cb-a766-b87e7d420812",
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Tokens API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Circle's Web3 Services API for developer-controlled programmable wallets, wallet sets,\nsigning, transactions, tokens, and NFTs. This is a best-effort partial spec derived\nfrom Circle's published OpenAPI at\nhttps://developers.circle.com/openapi/developer-controlled-wallets.yaml.\n\nContact Support:\n Name: Circle Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

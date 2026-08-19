@@ -1,0 +1,149 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled NFTs Wallets API",
+    "version": "2026-05-23"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Wallets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create developer-controlled wallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets"
+          },
+          "docs": "Create developer-controlled wallets"
+        },
+        {
+          "info": {
+            "name": "List wallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets"
+          },
+          "docs": "List wallets"
+        },
+        {
+          "info": {
+            "name": "Get wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet"
+        },
+        {
+          "info": {
+            "name": "Update wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Update wallet"
+        },
+        {
+          "info": {
+            "name": "List developer wallet balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets/balances"
+          },
+          "docs": "List developer wallet balances"
+        },
+        {
+          "info": {
+            "name": "Derive wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets/derive"
+          },
+          "docs": "Derive wallet"
+        },
+        {
+          "info": {
+            "name": "Get wallet token balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/wallets/:id/balances",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet token balances"
+        },
+        {
+          "info": {
+            "name": "Enable a blockchain for the wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/developer/wallets/:id/blockchains/:blockchain",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              },
+              {
+                "name": "blockchain",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Enable a blockchain for the wallet"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

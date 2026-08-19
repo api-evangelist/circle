@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Tokens API",
+    "version": "2026-05-23"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get token details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get token details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

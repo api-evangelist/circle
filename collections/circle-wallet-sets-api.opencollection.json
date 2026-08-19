@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Wallet Sets API",
+    "version": "2026-05-23"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Wallet Sets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List wallet sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/walletSets"
+          },
+          "docs": "List wallet sets"
+        },
+        {
+          "info": {
+            "name": "Get wallet set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.circle.com/v1/w3s/walletSets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Get wallet set"
+        },
+        {
+          "info": {
+            "name": "Create a developer-controlled wallet set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.circle.com/v1/w3s/developer/walletSets"
+          },
+          "docs": "Create a developer-controlled wallet set"
+        },
+        {
+          "info": {
+            "name": "Update a developer-controlled wallet set",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.circle.com/v1/w3s/developer/walletSets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource identifier (UUID)."
+              }
+            ]
+          },
+          "docs": "Update a developer-controlled wallet set"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
