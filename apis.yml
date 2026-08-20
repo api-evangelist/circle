@@ -8,6 +8,17 @@ tags:
   - Currency
   - Money
   - Payments
+  - Stablecoins
+  - Transfers
+  - USDC
+  - Wallets
+tags_raw:
+  - Blockchain
+  - Compliance
+  - Cross-Chain
+  - Currency
+  - Money
+  - Payments
   - Stablecoin
   - Transfers
   - USDC
@@ -71,6 +82,8 @@ apis:
   humanURL: https://developers.circle.com/w3s/programmable-wallets
   baseURL: https://api.circle.com/v1/w3s
   tags:
+  - NFT
+  tags_raw:
   - NFTs
   properties:
   - type: OpenAPI
@@ -155,6 +168,8 @@ apis:
   humanURL: https://developers.circle.com/w3s/programmable-wallets
   baseURL: https://api.circle.com/v1/w3s
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
