@@ -8,7 +8,7 @@ tags:
   - Currency
   - Money
   - Payments
-  - Stablecoins
+  - Stablecoin
   - Transfers
   - USDC
   - Wallets
@@ -82,7 +82,7 @@ apis:
   humanURL: https://developers.circle.com/w3s/programmable-wallets
   baseURL: https://api.circle.com/v1/w3s
   tags:
-  - NFT
+  - NFTs
   tags_raw:
   - NFTs
   properties:
