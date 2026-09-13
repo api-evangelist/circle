@@ -1,0 +1,28 @@
+generated: '2026-09-11'
+method: probed
+source: https://api.circle.com/v1/codegen/mcp
+status: published
+server:
+  name: circle
+  transport: http
+  url: https://api.circle.com/v1/codegen/mcp
+deployment:
+  mode: remote
+  endpoint: https://api.circle.com/v1/codegen/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-11 (endpoint found in the provider's own documentation, then probed)
+  probe_why: docs-check
+tools_count: 4
+tools:
+- name: search_circle_documentation
+  description: ''
+- name: get_circle_product_summary
+  description: ''
+- name: list_available_coding_resources
+  description: ''
+- name: get_coding_resource_details
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
