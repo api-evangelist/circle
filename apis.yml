@@ -77,36 +77,6 @@ apis:
   description: >-
     Sponsor gas fees on behalf of users or let users pay gas in USDC via Circle Paymaster, removing native-token
     friction from onboarding.
-- aid: circle:circle-nfts-api
-  name: Circle NFTs API
-  description: The NFTs API from Circle — 1 operation(s) for nfts.
-  humanURL: https://developers.circle.com/w3s/programmable-wallets
-  baseURL: https://api.circle.com/v1/w3s
-  tags:
-  - NFT
-  tags_raw:
-  - NFTs
-  properties:
-  - type: OpenAPI
-    url: openapi/circle-nfts-api-openapi.yml
-  - type: Documentation
-    url: https://developers.circle.com/w3s/programmable-wallets
-  - type: Documentation
-    url: https://developers.circle.com/w3s/user-controlled-wallets
-  - type: Documentation
-    url: https://developers.circle.com/cctp
-  - type: Documentation
-    url: https://developers.circle.com/gateway
-  - type: Documentation
-    url: https://developers.circle.com/w3s/smart-contract-platform
-  - type: Documentation
-    url: https://developers.circle.com/cpn
-  - type: Documentation
-    url: https://developers.circle.com/w3s/compliance-engine
-  - type: Documentation
-    url: https://developers.circle.com/stablefx
-  - type: Documentation
-    url: https://developers.circle.com/xreserve
 - aid: circle:circle-signing-api
   name: Circle Signing API
   description: The Signing API from Circle — 4 operation(s) for signing.
@@ -231,6 +201,34 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/circle-wallets-api-openapi.yml
+  - type: Documentation
+    url: https://developers.circle.com/w3s/programmable-wallets
+  - type: Documentation
+    url: https://developers.circle.com/w3s/user-controlled-wallets
+  - type: Documentation
+    url: https://developers.circle.com/cctp
+  - type: Documentation
+    url: https://developers.circle.com/gateway
+  - type: Documentation
+    url: https://developers.circle.com/w3s/smart-contract-platform
+  - type: Documentation
+    url: https://developers.circle.com/cpn
+  - type: Documentation
+    url: https://developers.circle.com/w3s/compliance-engine
+  - type: Documentation
+    url: https://developers.circle.com/stablefx
+  - type: Documentation
+    url: https://developers.circle.com/xreserve
+- aid: circle:circle-nfts-api
+  name: Circle NF Ts API
+  description: The NFTs API from Circle — 1 operation(s) for nfts.
+  humanURL: https://developers.circle.com/w3s/gas-station
+  baseURL: https://api.circle.com/v1/w3s
+  tags:
+  - NFTs
+  properties:
+  - type: OpenAPI
+    url: openapi/circle-nfts-api-openapi.yml
   - type: Documentation
     url: https://developers.circle.com/w3s/programmable-wallets
   - type: Documentation
