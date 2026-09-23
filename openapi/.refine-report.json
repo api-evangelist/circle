@@ -1,12 +1,7 @@
 {
   "provider": "circle",
   "sources": [
-    "circle-nfts-api-openapi.yml",
-    "circle-signing-api-openapi.yml",
-    "circle-tokens-api-openapi.yml",
-    "circle-transactions-api-openapi.yml",
-    "circle-wallet-sets-api-openapi.yml",
-    "circle-wallets-api-openapi.yml"
+    "_original/circle-openapi.yml"
   ],
   "outputs": [
     "circle-nfts-api-openapi.yml",
@@ -16,9 +11,23 @@
     "circle-wallet-sets-api-openapi.yml",
     "circle-wallets-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "circle-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: circle-nf-ts-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
+  ],
+  "skipped": [
+    "circle-nf-ts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "circle-signing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "circle-tokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "circle-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "circle-wallet-sets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "circle-wallets-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
