@@ -15,6 +15,7 @@ tags:
   - Transfers
   - USDC
   - Wallets
+  - Stablecoin Issuance
 tags_raw:
   - Blockchain
   - Compliance
@@ -26,6 +27,7 @@ tags_raw:
   - Transfers
   - USDC
   - Wallets
+  - Stablecoin Issuance
 type: Index
 deliveryModel:
   model: saas
