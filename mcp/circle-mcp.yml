@@ -17,12 +17,22 @@ deployment:
 tools_count: 4
 tools:
 - name: search_circle_documentation
-  description: ''
+  description: 'Use this tool to search the official Circle documentation for any information about the
+    Circle developer suite.  NOTE:   - You must use this tool FIRST to narrow your search scope, then
+    use get_circle_product_summary to understand the relev'
 - name: get_circle_product_summary
-  description: ''
+  description: 'Get a summary of a specific Circle Web3 product and its capabilities.  Use this tool SECOND
+    (after search_circle_documentation) to get detailed information about a specific Circle product including:
+    - Product description and use cases - Sup'
 - name: list_available_coding_resources
-  description: ''
+  description: 'List all available coding resources for a specific Circle product.  Use this tool THIRD
+    (after get_circle_product_summary) to understand what coding resources are available for implementation.  Returns
+    a list of coding resources with: - nam'
 - name: get_coding_resource_details
-  description: ''
+  description: Get detailed information about specific coding resources.  Use this tool FOURTH (after
+    list_available_coding_resources) to retrieve the full content of coding resources.  Provide the resource
+    names you got from list_available_coding_resourc
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
