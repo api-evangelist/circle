@@ -255,6 +255,12 @@ apis:
   - type: Documentation
     url: https://developers.circle.com/xreserve
 common:
+  - type: Plans
+    url: plans/circle-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/circle-rate-limits.yml
+  - type: FinOps
+    url: finops/circle-finops.yml
   - type: AgentSkills
     url: https://developers.circle.com/ai/skills
   - type: APIReference
