@@ -25,7 +25,7 @@
     - j. providing transfer services for crypto-assets on behalf of clients
     matched_domain: circle.com
     detected_by: sweep-crypto.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: circle-nydfs-new-york
@@ -46,7 +46,7 @@
     evidence: https://www.circle.com/legal/licenses
     matched_by: verified-legal-name
     detected_by: sweep-crypto.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
     other_registrations:
     - registered_name: Circle Internet Trust Company, LLC. d/b/a Circle New York Trust
       role: limited-purpose-trust-charter
