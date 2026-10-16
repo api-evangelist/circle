@@ -2,6 +2,13 @@
   "repo": "circle",
   "feeds": [
     {
+      "source": "https://www.circle.com/blog",
+      "feed_url": "https://www.circle.com/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://support.usdc.circle.com/",
       "feed_url": "https://support.usdc.circle.com/",
       "title": "",
@@ -10,7 +17,7 @@
     }
   ],
   "post_count": 5,
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "agent_pulled": "2026-07-04",
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
