@@ -1,0 +1,532 @@
+openapi: 3.2.0
+info:
+  version: 1.0.0
+  title: Audit Logs API
+  description: Retrieve a log of actions taken in your Circle account.
+servers:
+- url: https://api-sandbox.circle.com
+- url: https://api.circle.com
+tags:
+- name: Audit Logs
+  description: Retrieve a log of actions taken in your Circle account.
+paths:
+  /v1/auditLogs:
+    get:
+      security:
+      - bearerAuth: []
+      summary: List audit logs
+      description: 'Returns a paginated list of audit log entries for your account, ordered from newest to oldest. Use the query parameters to filter by time range, event type, actor, or outcome.
+
+        Results are paginated using opaque cursors returned in the `Link` response header.'
+      operationId: listAuditLogs
+      tags:
+      - Audit Logs
+      parameters:
+      - name: from
+        description: 'Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.
+
+          '
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+          example: '2026-05-10T12:00:00Z'
+      - name: to
+        description: 'Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.
+
+          '
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+          example: '2026-05-11T12:00:00Z'
+      - name: type
+        description: Filter results by event type.
+        in: query
+        required: false
+        schema:
+          type: string
+          example: user.signed_in
+      - name: actorId
+        description: Filter results by actor ID.
+        in: query
+        required: false
+        schema:
+          type: string
+          example: 0189a4f2-1c3b-7c8e-9d2a-2f6b1e4c8a10
+      - name: outcome
+        description: Filter results by outcome.
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - SUCCESS
+          - FAILURE
+          - PENDING
+          example: SUCCESS
+      - name: pageBefore
+        description: 'Opaque pagination cursor for the previous (newer) page. Read from the `rel="prev"` link in a previous response''s `Link` header. Must not be combined with `pageAfter`.
+
+          '
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageAfter
+        description: 'Opaque pagination cursor for the next (older) page. Read from the `rel="next"` link in a previous response''s `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.
+
+          '
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageSize
+        description: 'Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.
+
+          '
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+          default: 100
+          example: 100
+      responses:
+        '200':
+          description: Successfully retrieved a list of audit logs.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/XRequestId'
+            Link:
+              $ref: '#/components/headers/Link'
+          content:
+            application/json:
+              schema:
+                title: ListAuditLogsResponse
+                required:
+                - data
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuditLog'
+              example:
+                data:
+                - id: b3d9d2d5-4c12-4946-a09d-953e82fae2b0
+                  type: user.signed_in
+                  occurredAt: '2026-05-05T14:02:11.842Z'
+                  actorId: 0189a4f2-1c3b-7c8e-9d2a-2f6b1e4c8a10
+                  actorType: USER
+                  clientIp: 203.0.113.42
+                  outcomeResult: SUCCESS
+                  entityId: 1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed
+                  requestId: a1f2e3d4-5678-49ab-90cd-1234567890ab
+                  payload:
+                    email: a@b.co
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/NotAuthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '410':
+          $ref: '#/components/responses/Gone'
+        '429':
+          $ref: '#/components/responses/LimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/auditLogs/{id}:
+    get:
+      security:
+      - bearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/AuditLogIdPath'
+      summary: Get an audit log by ID
+      description: Returns a single audit log entry by its unique identifier.
+      operationId: getAuditLogById
+      tags:
+      - Audit Logs
+      responses:
+        '200':
+          description: Successfully retrieved an audit log.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/XRequestId'
+          content:
+            application/json:
+              schema:
+                title: GetAuditLogByIdResponse
+                required:
+                - data
+                properties:
+                  data:
+                    $ref: '#/components/schemas/AuditLog'
+              example:
+                data:
+                  id: b3d9d2d5-4c12-4946-a09d-953e82fae2b0
+                  type: user.signed_in
+                  occurredAt: '2026-05-05T14:02:11.842Z'
+                  actorId: 0189a4f2-1c3b-7c8e-9d2a-2f6b1e4c8a10
+                  actorType: USER
+                  clientIp: 203.0.113.42
+                  outcomeResult: SUCCESS
+                  entityId: 1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed
+                  requestId: a1f2e3d4-5678-49ab-90cd-1234567890ab
+                  payload:
+                    email: a@b.co
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/NotAuthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/LimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  parameters:
+    AuditLogIdPath:
+      name: id
+      description: Unique identifier of the audit log entry.
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: b3d9d2d5-4c12-4946-a09d-953e82fae2b0
+  responses:
+    Gone:
+      description: 'The requested page is no longer available. The pagination cursor points to data that has been archived. Restart pagination from the first page.
+
+        '
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: Gone
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 410
+              message:
+                type: string
+                example: The requested page is no longer available.
+            example:
+              code: 410
+              message: The requested page is no longer available.
+          examples:
+            response:
+              value:
+                code: 410
+                message: The requested page is no longer available.
+    LimitExceeded:
+      description: Limit exceeded. See error message for more details.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: LimitExceeded
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 429
+              message:
+                type: string
+                example: Too many requests.
+            example:
+              code: 429
+              message: Too many requests.
+          examples:
+            response:
+              value:
+                code: 429
+                message: Too many requests.
+    NotFound:
+      description: The specified resource was not found.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: NotFound
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 404
+              message:
+                type: string
+                example: Not found.
+            example:
+              code: 404
+              message: Not found.
+          examples:
+            response:
+              value:
+                code: 404
+                message: Not found.
+    NotAuthorized:
+      description: 'The request has not been applied because it lacks valid authentication credentials.
+
+        '
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: NotAuthorized
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 401
+              message:
+                type: string
+                example: Malformed authorization.
+            example:
+              code: 401
+              message: Malformed authorization.
+          examples:
+            response:
+              value:
+                code: 401
+                message: Malformed authorization.
+    BadRequest:
+      description: The request cannot be processed due to a client error.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: BadRequest
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 400
+              message:
+                type: string
+                example: Something went wrong.
+            example:
+              code: 400
+              message: Bad request.
+          examples:
+            response:
+              value:
+                code: 400
+                message: Bad request.
+    Forbidden:
+      description: 'The request provides authentication, but the authenticated user does not possess sufficient permissions for accessing this resource.
+
+        '
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: Forbidden
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 403
+              message:
+                type: string
+                example: Forbidden
+            example:
+              code: 403
+              message: Forbidden
+          examples:
+            response:
+              value:
+                code: 403
+                message: Forbidden
+    InternalServerError:
+      description: Unexpected server error.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/XRequestId'
+      content:
+        application/json:
+          schema:
+            type: object
+            title: InternalServerError
+            required:
+            - code
+            - message
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: Internal server error.
+            example:
+              code: 500
+              message: Internal server error.
+          examples:
+            response:
+              value:
+                code: 500
+                message: Internal server error.
+  headers:
+    Link:
+      description: 'Pagination cursor information. Format includes the following link relations: - `self`: URL pointing to the current page. - `first`: URL pointing to the first page. - `next`: URL pointing to the next (older) page. Omitted on the last page. - `prev`: URL pointing to the previous (newer) page. Omitted on the first page.
+
+        Follow the URLs from the `Link` header rather than constructing pagination URLs yourself. The response body carries no pagination metadata.
+
+        '
+      schema:
+        type: string
+        example: <https://api.circle.com/v1/auditLogs?pageSize=100>; rel="first", <https://api.circle.com/v1/auditLogs?pageSize=100>; rel="self", <https://api.circle.com/v1/auditLogs?pageSize=100&pageAfter=MjAyNi0wNS0wNVQxNDowMjoxMS44NDJafGIzZDlkMmQ1LTRjMTItNDk0Ni1hMDlkLTk1M2U4MmZhZTJiMA>; rel="next"
+    XRequestId:
+      description: 'Universally unique identifier (UUID v4) for the request. Helpful for identifying a request when communicating with Circle support.
+
+        '
+      schema:
+        type: string
+        format: uuid
+        example: 2adba88e-9d63-44bc-b975-9b6ae3440dde
+  schemas:
+    AuditLog:
+      type: object
+      description: 'A single audit log entry capturing an action taken within your Circle account, including who performed it, when it occurred, and the outcome.
+
+        '
+      required:
+      - id
+      - type
+      - occurredAt
+      - actorId
+      - actorType
+      - outcomeResult
+      - entityId
+      - requestId
+      - payload
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier of the audit log entry.
+          example: b3d9d2d5-4c12-4946-a09d-953e82fae2b0
+        type:
+          type: string
+          description: The event type describing the action that was recorded.
+          example: user.signed_in
+        occurredAt:
+          type: string
+          format: date-time
+          description: ISO-8601 UTC timestamp of when the event occurred.
+          example: '2026-05-05T14:02:11.842Z'
+        actorId:
+          type: string
+          description: Identifier of the actor that performed the action.
+          example: 0189a4f2-1c3b-7c8e-9d2a-2f6b1e4c8a10
+        actorType:
+          type: string
+          enum:
+          - USER
+          - API_KEY
+          - SYSTEM
+          description: The type of actor that performed the action.
+          example: USER
+        clientIp:
+          type: string
+          description: 'IP address of the client that initiated the action. May include a CIDR suffix (for example, `203.0.113.42/32`). Present only when known; otherwise omitted.
+
+            '
+          example: 203.0.113.42
+        targetId:
+          type: string
+          description: 'Identifier of the resource the action was performed on. Present only when applicable; otherwise omitted.
+
+            '
+          example: 8c3a2f5e-1d4b-4a9c-bf21-6e0d7c9a1b23
+        outcomeResult:
+          type: string
+          enum:
+          - SUCCESS
+          - FAILURE
+          - PENDING
+          description: The outcome of the recorded action.
+          example: SUCCESS
+        outcomeReason:
+          type: string
+          description: 'Additional context explaining the outcome, typically present for `FAILURE` outcomes. Present only when available; otherwise omitted.
+
+            '
+          example: invalid_credentials
+        entityId:
+          type: string
+          format: uuid
+          description: Unique identifier of the entity to which the event belongs.
+          example: 1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed
+        requestId:
+          type: string
+          description: 'Unique identifier of the API request that triggered this event. Use to correlate audit events with your originating requests.
+
+            '
+          example: a1f2e3d4-5678-49ab-90cd-1234567890ab
+        oldValues:
+          type: object
+          additionalProperties: true
+          description: 'The prior state of the affected resource, as a JSON object. Present when an event updates the resource; omitted otherwise.
+
+            '
+          example:
+            status: inactive
+        newValues:
+          type: object
+          additionalProperties: true
+          description: 'The new state of the affected resource, as a JSON object. Present when an event creates or updates the resource; omitted otherwise.
+
+            '
+          example:
+            status: active
+        payload:
+          type: object
+          additionalProperties: true
+          description: 'Event-specific details, as a JSON object. Contents depend on `type` and may be empty (`{}`).
+
+            '
+          example:
+            email: a@b.co
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
