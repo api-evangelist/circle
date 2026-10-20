@@ -1,0 +1,164 @@
+{
+  "endpoint": "https://api.circle.com/v1/codegen/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "Circle AI Codegen MCP Server V2",
+    "version": "3.3.1"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "search_circle_documentation",
+        "description": "Use this tool to search the official Circle documentation for any information about the Circle developer suite.\n\nNOTE:\n  - You must use this tool FIRST to narrow your search scope, then use get_circle_product_summary to understand the relevant product.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "query": {
+              "description": "Query to conduct a vector search in Circle's documentation.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "get_circle_product_summary",
+        "description": "Get a summary of a specific Circle Web3 product and its capabilities.\n\nUse this tool SECOND (after search_circle_documentation) to get detailed information about a specific Circle product including:\n- Product description and use cases\n- Supported blockchains\n- Key features and capabilities\n- When and how to use this product\n\nHere's list of supported products and a quick summary of each:\n- Developer-Controlled Wallets: Custodial wallets where developers manage user assets.\n- User-Controlled Wallets: MPC-powered wallets where users control their private keys.\n- Modular Wallets: A type of smart contract account wallet that can be extended with different modules, ideal for advanced / custom onchain wallets.\n- Cross-Chain Transfer Protocol (CCTP): Trust-minimized USDC bridging by burning on source and minting on target chains.\n- Gateway: A unified USDC balance across multiple chains that allows users to spend USDC on any supported chain whenever they want.\n- Smart Contract Platform (SCP): Deploy and manage smart contracts easily with Circle's templates or custom code.\nNote: Developer-Controlled Wallets and User-Controlled Wallets were originally called Programmable Wallets (abbreviated as PW) but now both are called Circle Wallets.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "product": {
+              "description": "The Circle Web3 product name to get a summary for.",
+              "enum": [
+                "cctp",
+                "gateway",
+                "smart-contract-platform",
+                "user-controlled-wallets",
+                "developer-controlled-wallets",
+                "modular-wallets",
+                "etherjs",
+                "solana-sdk"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "product"
+          ],
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "list_available_coding_resources",
+        "description": "List all available coding resources for a specific Circle product.\n\nUse this tool THIRD (after get_circle_product_summary) to understand what coding resources are available for implementation.\n\nReturns a list of coding resources with:\n- name: The identifier you'll use to retrieve the full resource details\n- description: What the resource does\n- resource_type: Either SDK_METHOD (TypeScript SDK methods) or CODE_SNIPPET (standalone code examples)\n\nThis helps you understand what's available before requesting full details with get_coding_resource_details.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "product": {
+              "description": "The Circle Web3 product name to list coding resources for.",
+              "enum": [
+                "cctp",
+                "gateway",
+                "smart-contract-platform",
+                "user-controlled-wallets",
+                "developer-controlled-wallets",
+                "modular-wallets",
+                "etherjs",
+                "solana-sdk"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "product"
+          ],
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "get_coding_resource_details",
+        "description": "Get detailed information about specific coding resources.\n\nUse this tool FOURTH (after list_available_coding_resources) to retrieve the full content of coding resources.\n\nProvide the resource names you got from list_available_coding_resources to get:\n- Full description\n- Complete content (code, documentation, metadata)\n- Resource type\n\nThis gives you everything needed to implement functionality using Circle products.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "product": {
+              "description": "The Circle Web3 product name.",
+              "enum": [
+                "cctp",
+                "gateway",
+                "smart-contract-platform",
+                "user-controlled-wallets",
+                "developer-controlled-wallets",
+                "modular-wallets",
+                "etherjs",
+                "solana-sdk"
+              ],
+              "type": "string"
+            },
+            "resource_names": {
+              "description": "List of coding resource names to retrieve (from list_available_coding_resources).",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "product",
+            "resource_names"
+          ],
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      }
+    ]
+  }
+}
