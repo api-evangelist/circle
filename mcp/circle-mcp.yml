@@ -17,21 +17,81 @@ deployment:
 tools_count: 4
 tools:
 - name: search_circle_documentation
-  description: 'Use this tool to search the official Circle documentation for any information about the
-    Circle developer suite.  NOTE:   - You must use this tool FIRST to narrow your search scope, then
-    use get_circle_product_summary to understand the relev'
+  description: "Use this tool to search the official Circle documentation for any information about the\
+    \ Circle developer suite.\n\nNOTE:\n  - You must use this tool FIRST to narrow your search scope,\
+    \ then use get_circle_product_summary to understand the relevant product."
 - name: get_circle_product_summary
-  description: 'Get a summary of a specific Circle Web3 product and its capabilities.  Use this tool SECOND
-    (after search_circle_documentation) to get detailed information about a specific Circle product including:
-    - Product description and use cases - Sup'
+  description: 'Get a summary of a specific Circle Web3 product and its capabilities.
+
+
+    Use this tool SECOND (after search_circle_documentation) to get detailed information about a specific
+    Circle product including:
+
+    - Product description and use cases
+
+    - Supported blockchains
+
+    - Key features and capabilities
+
+    - When and how to use this product
+
+
+    Here''s list of supported products and a quick summary of each:
+
+    - Developer-Controlled Wallets: Custodial wallets where developers manage user assets.
+
+    - User-Controlled Wallets: MPC-powered wallets where users control their private keys.
+
+    - Modular Wallets: A type of smart contract account wallet that can be extended with different modules,
+    ideal for advanced / custom onchain wallets.
+
+    - Cross-Chain Transfer Protocol (CCTP): Trust-minimized USDC bridging by burning on source and minting
+    on target chains.
+
+    - Gateway: A unified USDC balance across multiple chains that allows users to spend USDC on any supported
+    chain whenever they want.
+
+    - Smart Contract Platform (SCP): Deploy and manage smart contracts easily with Circle''s templates
+    or custom code.
+
+    Note: Developer-Controlled Wallets and User-Controlled Wallets were originally called Programmable
+    Wallets (abbreviated as PW) but now both are called Circle Wallets.'
 - name: list_available_coding_resources
-  description: 'List all available coding resources for a specific Circle product.  Use this tool THIRD
-    (after get_circle_product_summary) to understand what coding resources are available for implementation.  Returns
-    a list of coding resources with: - nam'
+  description: 'List all available coding resources for a specific Circle product.
+
+
+    Use this tool THIRD (after get_circle_product_summary) to understand what coding resources are available
+    for implementation.
+
+
+    Returns a list of coding resources with:
+
+    - name: The identifier you''ll use to retrieve the full resource details
+
+    - description: What the resource does
+
+    - resource_type: Either SDK_METHOD (TypeScript SDK methods) or CODE_SNIPPET (standalone code examples)
+
+
+    This helps you understand what''s available before requesting full details with get_coding_resource_details.'
 - name: get_coding_resource_details
-  description: Get detailed information about specific coding resources.  Use this tool FOURTH (after
-    list_available_coding_resources) to retrieve the full content of coding resources.  Provide the resource
-    names you got from list_available_coding_resourc
+  description: 'Get detailed information about specific coding resources.
+
+
+    Use this tool FOURTH (after list_available_coding_resources) to retrieve the full content of coding
+    resources.
+
+
+    Provide the resource names you got from list_available_coding_resources to get:
+
+    - Full description
+
+    - Complete content (code, documentation, metadata)
+
+    - Resource type
+
+
+    This gives you everything needed to implement functionality using Circle products.'
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
 descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
