@@ -54,3 +54,147 @@
       evidence: https://www.circle.com/legal/licenses
   status: not-a-workflow
   arazzo: null
+- slug: circle-mica-eu-e-money-asset-referenced-token-issuers
+  label: MiCA (EU) e-money / asset-referenced token issuers
+  partner_name: MiCA (EU) e-money / asset-referenced token issuers
+  category: stablecoin / token issuer register
+  type: contract
+  channel: regulator-register
+  evidence: https://www.esma.europa.eu/sites/default/files/2024-12/EMTWP.csv
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: 'ESMA interim MiCA register: e-money token issuers (EMTWP.csv)'
+    standard: MiCA (Regulation (EU) 2023/1114)
+    spec_file: null
+    role: emt-issuer
+    registered_name: Circle Internet Financial Europe SAS
+    register_id: 969500OYUDADGZKCR583
+    competent_authority: Autorité de Contrôle Prudentiel et de Resolution (ACPR)
+    home_member_state: FR
+    matched_domain: circle.com
+    matched_by: domain
+    white_papers:
+    - white_paper: https://www.circle.com/fr/legal/mica-eurc-whitepaper
+      notified: 01/07/2024
+      dti: FJM594L0V|T1J8XQBSD|FJM594L0V|FZQ4WZNHC|FMXXP963M
+    - white_paper: https://www.circle.com/fr/legal/mica-usdc-whitepaper
+      notified: 01/07/2024
+      dti: M8G59S1ZR|6BGZTT6GF|4ZSZS1F4F|45J6XJX7H|CP6817N4B|2ZTG3NNVB|VXJX1WW6V|CK9PW1MFH|P7H2X1B9H|XTS66R22W|GN9M0Z238|R3SV04GX9|RWPZZPR7C|S28NDWCSX|W2PQJJCPM|7NZRGQZ87|898NNTPZJ|N064ZKXDM|J2TPM5RFQ|LS71LQK3L|RN81GQLBH|5R3XFPZSM|MKC04VFBQ|DWBBXD2F1|TSLS4S9R8|FXZLG37L6|T6TQ8GN7L|56V43DKZ3|QQKDMF6N9|SKXZGD4J8|54VFN74B3|T9F5C3ZCC|GGMLHMDVQ|6TNZQDKZK|DWCZ3239L|9F3G4V14R
+    signal_note: 'participation only: a MiCA notification / authorisation; white papers and tokens are context,
+      never counted'
+    detected_by: sweep-stablecoins-tokenization.py
+    detected: '2026-10-20'
+    authorisation_type: Electronic money institution
+  status: not-a-workflow
+  arazzo: null
+- slug: circle-defillama
+  label: DefiLlama
+  partner: defillama
+  partner_name: DefiLlama
+  category: stablecoin data coverage
+  type: coverage
+  channel: partner-built
+  evidence: https://stablecoins.llama.fi/stablecoin/2
+  source: edge
+  relationship: connector-coverage
+  contract_reference:
+    register: DefiLlama stablecoins (stablecoins.llama.fi)
+    standard: null
+    spec_file: null
+    role: stablecoin-issuer
+    registered_name: USD Coin
+    register_id: https://stablecoins.llama.fi/stablecoin/2
+    matched_domain: circle.com
+    matched_by: domain+issuer-named-in-description
+    stablecoins:
+    - symbol: USDC
+      name: USD Coin
+      peg: peggedUSD
+      mechanism: fiat-backed
+      defillama: https://stablecoins.llama.fi/stablecoin/2
+    - symbol: EURC
+      name: EURC
+      peg: peggedEUR
+      mechanism: fiat-backed
+      defillama: https://stablecoins.llama.fi/stablecoin/50
+    peg_mechanisms:
+    - fiat-backed
+    signal_note: 'coverage: DefiLlama tracks the issuer''s stablecoin(s); coins, pegs and circulation are context,
+      never counted'
+    detected_by: sweep-stablecoins-tokenization.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: circle-agent-skills-own-github-org
+  label: Agent Skills (own GitHub org)
+  partner_name: Agent Skills (own GitHub org)
+  category: Agent Skills package
+  type: register
+  channel: provider-built
+  evidence: https://github.com/circlefin/skills
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: 'provider''s own GitHub org (GitHub REST API: repo + git tree holds SKILL.md)'
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-repo
+    matched_org: circlefin
+    matched_by: org-profile-domain:circle.com
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: circle-skills-sh
+  label: skills.sh
+  partner_name: skills.sh
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://www.skills.sh/circlefin/skills
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: skills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: circlefin
+    matched_by: org-profile-domain:circle.com
+    sample_skills:
+    - agent-wallet-policy
+    - bridge-stablecoin
+    - fund-agent-wallet
+    - pay-via-agent-wallet
+    - swap-tokens
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: circle-skillsmp-skillsmp-com
+  label: SkillsMP (skillsmp.com)
+  partner_name: SkillsMP (skillsmp.com)
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://skillsmp.com/creators/circlefin/skills
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: SkillsMP (skillsmp.com) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: circlefin
+    matched_by: org-profile-domain:circle.com
+    sample_skills:
+    - plugins-circle-skills-agent-wallet-policy
+    - plugins-circle-skills-bridge-stablecoin
+    - plugins-circle-skills-fund-agent-wallet
+    - plugins-circle-skills-pay-via-agent-wallet
+    - plugins-circle-skills-swap-tokens
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
