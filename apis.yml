@@ -111,6 +111,8 @@ apis:
   - type: Documentation
     url: https://developers.circle.com/xreserve
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/circle/overview
   - type: Plans
     url: plans/circle-plans-pricing.yml
   - type: RateLimits
