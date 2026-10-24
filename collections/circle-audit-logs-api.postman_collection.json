@@ -1,0 +1,1255 @@
+{
+  "info": {
+    "_postman_id": "70ab3bf7-c170-43bd-ae30-7eaea10185b2",
+    "name": "Audit Logs API",
+    "description": "Retrieve a log of actions taken in your Circle account.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-21T20:07:45.000Z",
+    "updatedAt": "2026-10-21T20:07:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-70ab3bf7-c170-43bd-ae30-7eaea10185b2"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "auditLogs",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "Get an audit log by ID",
+                  "id": "77b4cee3-ccf0-47cc-b59f-2ea968c36d7d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "927232ec-9471-4e02-85f1-ebf63cd36605",
+                          "key": "id",
+                          "value": "<uuid>",
+                          "description": "(Required) Unique identifier of the audit log entry."
+                        }
+                      ]
+                    },
+                    "description": "Returns a single audit log entry by its unique identifier."
+                  },
+                  "response": [
+                    {
+                      "id": "483ae795-448e-4cfb-b0b9-8cb61fff22a5",
+                      "name": "Successfully retrieved an audit log.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"id\": \"<uuid>\",\n    \"type\": \"<string>\",\n    \"occurredAt\": \"<dateTime>\",\n    \"actorId\": \"<string>\",\n    \"actorType\": \"API_KEY\",\n    \"outcomeResult\": \"SUCCESS\",\n    \"entityId\": \"<uuid>\",\n    \"requestId\": \"<string>\",\n    \"payload\": {\n      \"ex_ea8\": -39944597\n    },\n    \"clientIp\": \"<string>\",\n    \"targetId\": \"<string>\",\n    \"outcomeReason\": \"<string>\",\n    \"oldValues\": {\n      \"amet_c\": 6618557\n    },\n    \"newValues\": {\n      \"officia748\": \"deserunt\"\n    }\n  }\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-483ae795-448e-4cfb-b0b9-8cb61fff22a5"
+                    },
+                    {
+                      "id": "3f547a04-dd7c-491d-aa8f-9871091696f2",
+                      "name": "The request cannot be processed due to a client error.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-3f547a04-dd7c-491d-aa8f-9871091696f2"
+                    },
+                    {
+                      "id": "a7f6f8b5-88ea-4c6a-89ae-6e43e2b150f7",
+                      "name": "The request has not been applied because it lacks valid authentication credentials.\n",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-a7f6f8b5-88ea-4c6a-89ae-6e43e2b150f7"
+                    },
+                    {
+                      "id": "171bece3-fdc3-47af-8c12-a71b828b9c82",
+                      "name": "The request provides authentication, but the authenticated user does not possess sufficient permissions for accessing this resource.\n",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-171bece3-fdc3-47af-8c12-a71b828b9c82"
+                    },
+                    {
+                      "id": "1ff185b7-f438-4979-9c1a-37d0a19176de",
+                      "name": "The specified resource was not found.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-1ff185b7-f438-4979-9c1a-37d0a19176de"
+                    },
+                    {
+                      "id": "6f8196d8-20fe-4684-9836-0963ec8c85b5",
+                      "name": "Limit exceeded. See error message for more details.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-6f8196d8-20fe-4684-9836-0963ec8c85b5"
+                    },
+                    {
+                      "id": "44b94197-3416-4dae-bdd3-fada6c8f2f28",
+                      "name": "Unexpected server error.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/auditLogs/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "auditLogs",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
+                          "key": "X-Request-Id",
+                          "value": ""
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-10-21T20:07:46.000Z",
+                      "updatedAt": "2026-10-21T20:07:46.000Z",
+                      "uid": "35240-44b94197-3416-4dae-bdd3-fada6c8f2f28"
+                    }
+                  ],
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-77b4cee3-ccf0-47cc-b59f-2ea968c36d7d"
+                }
+              ],
+              "id": "b5f4643f-824a-4c1c-9329-1f548e0b6455",
+              "createdAt": "2026-10-21T20:07:46.000Z",
+              "updatedAt": "2026-10-21T20:07:46.000Z",
+              "uid": "35240-b5f4643f-824a-4c1c-9329-1f548e0b6455"
+            },
+            {
+              "name": "List audit logs",
+              "id": "f7742b3d-11c7-42ff-8b1e-545dc89caeff",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "auditLogs"
+                  ],
+                  "query": [
+                    {
+                      "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                      "key": "to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "Filter results by event type.",
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter results by actor ID.",
+                      "key": "actorId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter results by outcome.",
+                      "key": "outcome",
+                      "value": "SUCCESS"
+                    },
+                    {
+                      "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                      "key": "pageBefore",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                      "key": "pageAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                      "key": "pageSize",
+                      "value": "100"
+                    }
+                  ]
+                },
+                "description": "Returns a paginated list of audit log entries for your account, ordered from newest to oldest. Use the query parameters to filter by time range, event type, actor, or outcome.\nResults are paginated using opaque cursors returned in the `Link` response header."
+              },
+              "response": [
+                {
+                  "id": "6506b72e-421f-48c4-b916-1d074a662b4f",
+                  "name": "Successfully retrieved a list of audit logs.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "Link",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"occurredAt\": \"<dateTime>\",\n      \"actorId\": \"<string>\",\n      \"actorType\": \"API_KEY\",\n      \"outcomeResult\": \"FAILURE\",\n      \"entityId\": \"<uuid>\",\n      \"requestId\": \"<string>\",\n      \"payload\": {\n        \"adbd\": 58827414,\n        \"nostruda8e\": -5937776\n      },\n      \"clientIp\": \"<string>\",\n      \"targetId\": \"<string>\",\n      \"outcomeReason\": \"<string>\",\n      \"oldValues\": {\n        \"Duisc1\": \"amet in sit eu veniam\",\n        \"nisifb0\": 47864912.99722743,\n        \"nulla_15\": false\n      },\n      \"newValues\": {\n        \"proidentaae\": -250994.09744173288,\n        \"fugiat_f09\": \"veniam ea dolor\"\n      }\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"type\": \"<string>\",\n      \"occurredAt\": \"<dateTime>\",\n      \"actorId\": \"<string>\",\n      \"actorType\": \"API_KEY\",\n      \"outcomeResult\": \"FAILURE\",\n      \"entityId\": \"<uuid>\",\n      \"requestId\": \"<string>\",\n      \"payload\": {\n        \"reprehenderit17c\": 2191748\n      },\n      \"clientIp\": \"<string>\",\n      \"targetId\": \"<string>\",\n      \"outcomeReason\": \"<string>\",\n      \"oldValues\": {\n        \"adipisicinga\": -6222582,\n        \"ipsum_4e\": false,\n        \"exercitation5\": 70527952\n      },\n      \"newValues\": {\n        \"voluptate_70d\": \"Excepteur proident\"\n      }\n    }\n  ]\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-6506b72e-421f-48c4-b916-1d074a662b4f"
+                },
+                {
+                  "id": "628dd5ce-a892-4d96-aea1-e965700deb38",
+                  "name": "The request cannot be processed due to a client error.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-628dd5ce-a892-4d96-aea1-e965700deb38"
+                },
+                {
+                  "id": "eafffd4d-d019-4a1d-8961-5d105461800d",
+                  "name": "The request has not been applied because it lacks valid authentication credentials.\n",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-eafffd4d-d019-4a1d-8961-5d105461800d"
+                },
+                {
+                  "id": "516c860a-9ad7-400d-8e1e-b61e4a91eb20",
+                  "name": "The request provides authentication, but the authenticated user does not possess sufficient permissions for accessing this resource.\n",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-516c860a-9ad7-400d-8e1e-b61e4a91eb20"
+                },
+                {
+                  "id": "6c6deecf-baa1-4e0c-af9d-080feb4b8cd4",
+                  "name": "The requested page is no longer available. The pagination cursor points to data that has been archived. Restart pagination from the first page.\n",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Gone",
+                  "code": 410,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-6c6deecf-baa1-4e0c-af9d-080feb4b8cd4"
+                },
+                {
+                  "id": "39d1f62b-6372-4668-bab2-c2319742027e",
+                  "name": "Limit exceeded. See error message for more details.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-39d1f62b-6372-4668-bab2-c2319742027e"
+                },
+                {
+                  "id": "6605d234-dfac-4a77-a173-a3580c0afbed",
+                  "name": "Unexpected server error.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auditLogs?from=<dateTime>&to=<dateTime>&type=<string>&actorId=<string>&outcome=SUCCESS&pageBefore=<string>&pageAfter=<string>&pageSize=100",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auditLogs"
+                      ],
+                      "query": [
+                        {
+                          "description": "Inclusive ISO-8601 lower bound on `occurredAt`. Must not be after `to`.\n",
+                          "key": "from",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Exclusive ISO-8601 upper bound on `occurredAt`. Must not be before `from`.\n",
+                          "key": "to",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "Filter results by event type.",
+                          "key": "type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by actor ID.",
+                          "key": "actorId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by outcome.",
+                          "key": "outcome",
+                          "value": "SUCCESS"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the previous (newer) page. Read from the `rel=\"prev\"` link in a previous response's `Link` header. Must not be combined with `pageAfter`.\n",
+                          "key": "pageBefore",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Opaque pagination cursor for the next (older) page. Read from the `rel=\"next\"` link in a previous response's `Link` header. Must not be combined with `pageBefore`. Omit to fetch the first (most recent) page.\n",
+                          "key": "pageAfter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of audit logs to return. Must be between `1` and `1000`; defaults to `100` when omitted.\n",
+                          "key": "pageSize",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "X-Request-Id",
+                      "value": ""
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-10-21T20:07:46.000Z",
+                  "updatedAt": "2026-10-21T20:07:46.000Z",
+                  "uid": "35240-6605d234-dfac-4a77-a173-a3580c0afbed"
+                }
+              ],
+              "createdAt": "2026-10-21T20:07:46.000Z",
+              "updatedAt": "2026-10-21T20:07:46.000Z",
+              "uid": "35240-f7742b3d-11c7-42ff-8b1e-545dc89caeff"
+            }
+          ],
+          "id": "16c5313f-ebe9-4bec-b925-b5d90da1ba6e",
+          "createdAt": "2026-10-21T20:07:46.000Z",
+          "updatedAt": "2026-10-21T20:07:46.000Z",
+          "uid": "35240-16c5313f-ebe9-4bec-b925-b5d90da1ba6e"
+        }
+      ],
+      "id": "4fd9b412-5957-4fb7-8961-2066d2a3e1df",
+      "createdAt": "2026-10-21T20:07:46.000Z",
+      "updatedAt": "2026-10-21T20:07:46.000Z",
+      "uid": "35240-4fd9b412-5957-4fb7-8961-2066d2a3e1df"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api-sandbox.circle.com"
+    }
+  ]
+}
