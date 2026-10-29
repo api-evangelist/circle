@@ -1,4 +1,4 @@
-# Circle (circle)
+# Circle
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,251 +66,178 @@
 
 Circle Internet Financial is the issuer of USDC and EURC and operates a developer platform for moving regulated stablecoin money across the internet. Their APIs cover programmable wallets (developer- and user-controlled), gas sponsorship, the Cross-Chain Transfer Protocol (CCTP), Gateway unified balances, the Smart Contract Platform, the Circle Payments Network (CPN) for cross-border payments, compliance, StableFX trading on Arc, and xReserve for issuing USDC-backed stablecoins.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/circle/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/circle/refs/heads/main/apis.yml)
+**Areas:** Blockchain · Compliance · Cross-Chain · Currency · Money · Payments · Stablecoins · Transfers · USDC · Wallets · Stablecoin Issuance
 
-## Scope
+## Circle on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Circle is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/circle/](https://apis.io/providers/circle/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Blockchain
-- Compliance
-- Cross-Chain
-- Currency
-- Money
-- Payments
-- Stablecoin
-- Transfers
-- USDC
-- Wallets
+- [Gas Station and Paymaster](https://apis.io/apis/circle/gas-station/) — Sponsor gas fees on behalf of users or let users pay gas in USDC via Circle Paymaster, removing native-token friction from onboarding.
+- [Circle Signing API](https://apis.io/apis/circle/circle-signing-api/) — The Signing API from Circle — 4 operation(s) for signing.
+- [Circle Tokens API](https://apis.io/apis/circle/circle-tokens-api/) — The Tokens API from Circle — 1 operation(s) for tokens.
+- [Circle Transactions API](https://apis.io/apis/circle/circle-transactions-api/) — The Transactions API from Circle — 12 operation(s) for transactions.
+- [Circle Wallet Sets API](https://apis.io/apis/circle/circle-wallet-sets-api/) — The Wallet Sets API from Circle — 4 operation(s) for wallet sets.
+- [Circle Wallets API](https://apis.io/apis/circle/circle-wallets-api/) — The Wallets API from Circle — 7 operation(s) for wallets.
+- [Circle NF Ts API](https://apis.io/apis/circle/circle-nfts-api/) — The NFTs API from Circle — 1 operation(s) for nfts.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-07
-- **Modified:** 2026-05-30
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### Developer-Controlled Wallets
+Event-driven and webhook contracts.
 
-Create and manage server-side wallets where the application controls private keys via Circle's secure key management. Supports balances, transfers, signing, and webhook notifications.
+- [Circle Webhook Notifications](https://apis.io/asyncapis/circle/circle-webhooks-asyncapi/)
 
-- **Human URL:** [https://developers.circle.com/w3s/programmable-wallets](https://developers.circle.com/w3s/programmable-wallets)
-- **Base URL:** `https://api.circle.com/v1/w3s`
+#### Event channels (5)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- Custody
-- USDC
-- Wallets
+- [/circle/contracts](https://apis.io/channels/circle/circle-contracts/)
+- [/circle/cpn](https://apis.io/channels/circle/circle-cpn/)
+- [/circle/gateway](https://apis.io/channels/circle/circle-gateway/)
+- [/circle/stablefx](https://apis.io/channels/circle/circle-stablefx/)
+- [/circle/webhooks-test](https://apis.io/channels/circle/circle-webhooks-test/)
 
-#### Properties
+#### MCP servers (2)
 
-- [Documentation](https://developers.circle.com/w3s/programmable-wallets)
-- [OpenAPI](https://developers.circle.com/openapi/developer-controlled-wallets.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Model Context Protocol servers that expose the API to agents.
 
-### User-Controlled Wallets
+- [circle](https://apis.io/servers/circle/circle/)
+- [mcp](https://apis.io/servers/circle/mcp/)
 
-Create wallets that end users control via PIN, biometrics, or social recovery while Circle handles the cryptography. Used to embed non-custodial USDC wallets directly inside consumer apps.
+#### Agentic access (1)
 
-- **Human URL:** [https://developers.circle.com/w3s/user-controlled-wallets](https://developers.circle.com/w3s/user-controlled-wallets)
-- **Base URL:** `https://api.circle.com/v1/w3s`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Circle Agentic Access](https://apis.io/agentic-access/circle/circle-agentic-access/)
 
-- Custody
-- End-User
-- USDC
-- Wallets
+#### JSON Schema (2)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://developers.circle.com/w3s/user-controlled-wallets)
-- [OpenAPI](https://developers.circle.com/openapi/user-controlled-wallets.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Circle Transaction](https://apis.io/schemas/circle/circle-transaction/)
+- [Circle Wallet](https://apis.io/schemas/circle/circle-wallet/)
 
-### Gas Station and Paymaster
+#### JSON-LD (1)
 
-Sponsor gas fees on behalf of users or let users pay gas in USDC via Circle Paymaster, removing native-token friction from onboarding.
+Linked-data contexts for the provider's vocabulary.
 
-- **Human URL:** [https://developers.circle.com/w3s/gas-station](https://developers.circle.com/w3s/gas-station)
-- **Base URL:** `https://api.circle.com/v1/w3s`
+- [Circle Context](https://apis.io/jsonld/circle/circle-context/)
 
-#### Tags
+#### Collections (7)
 
-- Gas Sponsorship
-- Paymaster
-- USDC
+Postman and Open Collection request collections.
 
-#### Properties
+- [Circle Web3 Services (W3S) — Developer-Controlled Wallets API](https://apis.io/collections/circle/open-circle/)
+- [Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs API](https://apis.io/collections/circle/open-circle-nfts-api/)
+- [Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Signing API](https://apis.io/collections/circle/open-circle-signing-api/)
+- [Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Tokens API](https://apis.io/collections/circle/open-circle-tokens-api/)
+- [Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Transactions API](https://apis.io/collections/circle/open-circle-transactions-api/)
+- [Circle Web3 Services (W3S) — Developer-Controlled Wallets NFTs Wallet Sets API](https://apis.io/collections/circle/open-circle-wallet-sets-api/)
+- [Circle Web3 Services (W3S) — Developer-Controlled NFTs Wallets API](https://apis.io/collections/circle/open-circle-wallets-api/)
 
-- [Documentation](https://developers.circle.com/w3s/gas-station)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (3)
 
-### Cross-Chain Transfer Protocol (CCTP)
+Spectral rulesets for the provider's contracts.
 
-Burn-and-mint protocol for moving native USDC between supported blockchains without wrapped assets. Provides REST endpoints for attestations and a Bridge Kit SDK for frontend integration.
+- [Circle — asyncapi rules](https://apis.io/rules/circle/circle-asyncapi-spectral-rules/)
+- [Circle — jsonschema rules](https://apis.io/rules/circle/circle-jsonschema-spectral-rules/)
+- [Circle API Rules](https://apis.io/rules/circle/circle-rules/)
 
-- **Human URL:** [https://developers.circle.com/cctp](https://developers.circle.com/cctp)
+#### Security (2)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Bridging
-- Cross-Chain
-- USDC
+- [Circle Authentication](https://apis.io/security/circle/circle-authentication/)
+- [Circle Domain Security](https://apis.io/security/circle/circle-domain-security/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://developers.circle.com/cctp)
-- [OpenAPI](https://developers.circle.com/openapi/cctp.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published plans, tiers and prices.
 
-### Circle Gateway
+- [Circle Plans Pricing](https://apis.io/plans/circle/circle-plans-pricing/)
 
-Unified USDC balance across multiple EVM chains and support for nanopayments down to $0.000001 of USDC.
+#### Rate limits (1)
 
-- **Human URL:** [https://developers.circle.com/gateway](https://developers.circle.com/gateway)
+Published request limits.
 
-#### Tags
+- [Circle Rate Limits](https://apis.io/rate-limits/circle/circle-rate-limits/)
 
-- Cross-Chain
-- Liquidity
-- USDC
+#### FinOps (1)
 
-#### Properties
+What the API costs to run, by operation.
 
-- [Documentation](https://developers.circle.com/gateway)
-- [OpenAPI](https://developers.circle.com/openapi/gateway.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Circle Finops](https://apis.io/finops/circle/circle-finops/)
 
-### Smart Contract Platform
+## Where to find this API
 
-Deploy, query, and interact with smart contracts across supported blockchains, including ERC-20 and ERC-721 templates and arbitrary contract calls.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **Human URL:** [https://developers.circle.com/w3s/smart-contract-platform](https://developers.circle.com/w3s/smart-contract-platform)
-- **Base URL:** `https://api.circle.com/v1/w3s`
-
-#### Tags
-
-- Contracts
-- EVM
-- Web3
-
-#### Properties
-
-- [Documentation](https://developers.circle.com/w3s/smart-contract-platform)
-- [OpenAPI](https://developers.circle.com/openapi/smart-contract-platform.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Circle Payments Network (CPN)
-
-A network for regulated financial institutions to settle cross-border payments using USDC, with originating and beneficiary financial institution (OFI/BFI) APIs.
-
-- **Human URL:** [https://developers.circle.com/cpn](https://developers.circle.com/cpn)
-
-#### Tags
-
-- Cross-Border
-- Payments
-- Settlement
-
-#### Properties
-
-- [Documentation](https://developers.circle.com/cpn)
-- [OpenAPI](https://developers.circle.com/openapi/cpn-ofi.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Compliance Engine
-
-Screen wallet addresses and transactions against sanctions lists and risk signals; configure rule sets and review queues for AML programs.
-
-- **Human URL:** [https://developers.circle.com/w3s/compliance-engine](https://developers.circle.com/w3s/compliance-engine)
-
-#### Tags
-
-- AML
-- Compliance
-- Risk
-
-#### Properties
-
-- [Documentation](https://developers.circle.com/w3s/compliance-engine)
-- [OpenAPI](https://developers.circle.com/openapi/compliance.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StableFX
-
-Stablecoin foreign-exchange trading API on the Arc blockchain for converting between USDC, EURC, and other regulated stablecoins.
-
-- **Human URL:** [https://developers.circle.com/stablefx](https://developers.circle.com/stablefx)
-
-#### Tags
-
-- Arc
-- FX
-- Trading
-
-#### Properties
-
-- [Documentation](https://developers.circle.com/stablefx)
-- [OpenAPI](https://developers.circle.com/openapi/stablefx.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### xReserve
-
-Issue and redeem regulated stablecoins backed by USDC reserves; manage minting, burning, and reserve attestations.
-
-- **Human URL:** [https://developers.circle.com/xreserve](https://developers.circle.com/xreserve)
-
-#### Tags
-
-- Issuance
-- Reserves
-- Stablecoin
-
-#### Properties
-
-- [Documentation](https://developers.circle.com/xreserve)
-- [OpenAPI](https://developers.circle.com/openapi/xreserve.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/circle.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/circle.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/circleco)
 - [Website](https://www.circle.com/)
-- [Portal](https://developers.circle.com/)
-- [Console](https://console.circle.com/)
-- [Authentication](https://developers.circle.com/w3s/authentication)
-- [Getting Started](https://developers.circle.com/w3s/getting-started)
-- [Status Page](https://status.circle.com/)
+- [Getting started](https://developers.circle.com/w3s/getting-started)
+- [API reference](https://developers.circle.com/api-reference)
 - [Support](https://support.usdc.circle.com/)
 - [Blog](https://www.circle.com/blog)
-- [Community](https://discord.com/invite/buildoncircle)
-- [GitHub Organization](https://github.com/circlefin)
-- [Privacy Policy](https://www.circle.com/legal/privacy-policy)
-- [Terms of Service](https://www.circle.com/legal/terms-of-service)
-- [JSON-LD](json-ld/circle-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON Schema](json-schema/circle-wallet-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/circle-transaction-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [AsyncAPI](asyncapi/circle-webhooks-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Spectral Rules](rules/circle-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
-- [L L Ms Txt](https://developers.circle.com/llms.txt)
+- [Terms of service](https://www.circle.com/legal/terms-of-service)
+- [Privacy policy](https://www.circle.com/legal/privacy-policy)
+- [GitHub](https://github.com/circlefin)
+- [Status](https://status.circle.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 40.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 60.9 |
+| Contract governance | 13.6 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 48.1 |
+| Access clarity | 18.4 |
+
+**Agent readiness 41.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | unknown |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 18.8** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/circle/](https://apis.io/providers/circle/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Circle: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/circle/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
